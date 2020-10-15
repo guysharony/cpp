@@ -6,13 +6,13 @@
 #    By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/13 10:47:42 by gsharony          #+#    #+#              #
-#    Updated: 2020/10/13 10:47:43 by gsharony         ###   ########.fr        #
+#    Updated: 2020/10/15 10:29:13 by gsharony         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC			= clang++
 
-FLAGS		= -Wall -Werror -Wextra
+FLAGS		= -Wall -Werror -Wextra -std=c++98
 
 FILES		= main.cpp Annuaire.cpp DataBase.cpp
 
