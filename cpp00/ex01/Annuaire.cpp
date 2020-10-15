@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 10:47:07 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/15 08:25:53 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/15 11:26:23 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,24 @@
 
 Annuaire::Annuaire() {
 	total = 0;
+	return;
 }
 
 Annuaire::~Annuaire() {}
 
 void	Annuaire::newContact() {
 	if (total < 8) {
-		db[total].Insert("first_name");
-		db[total].Insert("last_name");
-		db[total].Insert("nickname");
-		db[total].Insert("login");
-		db[total].Insert("postal_address");
-		db[total].Insert("email_address");
-		db[total].Insert("phone_number");
-		db[total].Insert("birthday_date");
-		db[total].Insert("favorite_meal");
-		db[total].Insert("underwear_color");
-		db[total].Insert("darkest_secret");
+		c[total].Insert("first_name");
+		c[total].Insert("last_name");
+		c[total].Insert("nickname");
+		c[total].Insert("login");
+		c[total].Insert("postal_address");
+		c[total].Insert("email_address");
+		c[total].Insert("phone_number");
+		c[total].Insert("birthday_date");
+		c[total].Insert("favorite_meal");
+		c[total].Insert("underwear_color");
+		c[total].Insert("darkest_secret");
 		total++;
 	} else {
 		std::cout << "Your phonebook is full!" << std::endl;
@@ -45,7 +46,7 @@ void	Annuaire::showContact() {
 	std::getline(std::cin, cmd);
 	index = atoi(cmd.c_str());
 	if (index > 0 && index <= total && cmd.length() == 1) {
-		db[index - 1].getInfo();
+		c[index - 1].getInfo();
 	} else {
 		std::cout << "Index not valid." << std::endl;
 	}
@@ -56,7 +57,7 @@ void	Annuaire::search() {
 
 	i = _sHeader();
 	while (i < total) {
-		db[i].Show(i);
+		c[i].Show(i);
 		i++;
 	}
 	_sFooter();

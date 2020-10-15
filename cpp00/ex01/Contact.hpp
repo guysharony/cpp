@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DataBase.hpp                                       :+:      :+:    :+:   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/13 10:47:35 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/13 10:47:35 by gsharony         ###   ########.fr       */
+/*   Created: 2020/10/15 11:24:25 by gsharony          #+#    #+#             */
+/*   Updated: 2020/10/15 11:24:52 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATABASE_CLASS_HPP
-# define DATABASE_CLASS_HPP
+#ifndef CONTACT_CLASS_HPP
+# define CONTACT_CLASS_HPP
 # include <iostream>
 
-class DataBase
+class Contact
 {
 	public:
-		DataBase();
-		~DataBase();
+		Contact();
+		~Contact();
 
 		void Insert(std::string name);
 		void Print(std::string str);

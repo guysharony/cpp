@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/13 10:47:51 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/15 08:31:02 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/15 11:29:32 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int		main(int argc, char **argv)
 {
-	int	i;
-	int	j;
+	int		i;
+	size_t	j;
 
 	if (argc > 1)
 	{

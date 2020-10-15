@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DataBase.cpp                                       :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/13 10:47:29 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/13 10:47:30 by gsharony         ###   ########.fr       */
+/*   Created: 2020/10/15 11:23:43 by gsharony          #+#    #+#             */
+/*   Updated: 2020/10/15 11:31:36 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DataBase.hpp"
+#include "Contact.hpp"
 
-DataBase::DataBase() {}
+Contact::Contact() {}
 
-DataBase::~DataBase() {}
+Contact::~Contact() {}
 
-void DataBase::Query(std::string name) {
+void Contact::Query(std::string name) {
 	std::string cmd;
 
 	std::getline(std::cin, cmd);
@@ -44,7 +44,7 @@ void DataBase::Query(std::string name) {
 		this->_darkest_secret = cmd;
 }
 
-void DataBase::Insert(std::string name) {
+void Contact::Insert(std::string name) {
 	if (!(name.compare("first_name")))
 		std::cout << "First Name: ";
 	else if (!(name.compare("last_name")))
@@ -70,7 +70,7 @@ void DataBase::Insert(std::string name) {
 	Query(name);
 }
 
-void DataBase::Print(std::string str) {
+void Contact::Print(std::string str) {
 	int i;
 
 	i = 0;
@@ -89,7 +89,7 @@ void DataBase::Print(std::string str) {
 		std::cout << " ";
 }
 
-void DataBase::Show(int i) {
+void Contact::Show(int i) {
 	std::cout << "|";
 	std::cout << i + 1 << "         ";
 	std::cout << "|";
@@ -101,7 +101,7 @@ void DataBase::Show(int i) {
 	std::cout << "|" << std::endl;
 }
 
-void DataBase::getInfo() {
+void Contact::getInfo() {
 	std::cout << "First Name: " << this->_first_name << std::endl;
 	std::cout << "Last Name: " << this->_last_name << std::endl;
 	std::cout << "Nickname: " << this->_nickname << std::endl;
