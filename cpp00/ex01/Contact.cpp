@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 11:23:43 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/15 11:31:36 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/15 11:41:31 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void Contact::Insert(std::string name) {
 }
 
 void Contact::Print(std::string str) {
-	int i;
+	size_t i;
 
 	i = 0;
 	while (i < 9) {
