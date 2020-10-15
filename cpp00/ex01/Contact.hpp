@@ -6,13 +6,14 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/15 11:24:25 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/15 11:24:52 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/15 11:37:30 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_CLASS_HPP
 # define CONTACT_CLASS_HPP
 # include <iostream>
+# include <string>
 
 class Contact
 {
