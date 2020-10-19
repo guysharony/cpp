@@ -77,7 +77,7 @@ void	Annuaire::_tHeader(void) const {
 }
 
 void	Annuaire::_tBody(void) const {
-	size_t	n;
+	int	n;
 
 	n = 0;
 	while (n < this->_total) {
