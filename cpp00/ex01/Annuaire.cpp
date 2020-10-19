@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/16 11:02:42 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/19 09:20:53 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/19 09:45:04 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,22 +59,15 @@ void	Annuaire::_insert(void) {
 }
 
 void	Annuaire::_print(std::string str) const {
-	size_t i;
-
-	i = 0;
-	while (i < 9) {
-		if (i < str.length())
-			std::cout << str[i];
-		else
-			std::cout << " ";
-		i++;
+	if (str.length() > 10) {
+		str = str.insert(9, ".");
+		str = str.substr(0, 10);
+	} else {
+		for(size_t i = str.length(); i < 10; i++) {
+			str = str.insert(i, " ");
+		}
 	}
-	if (str.length() == 10)
-		std::cout << str[i];
-	else if (str.length() > 10)
-		std::cout << ".";
-	else
-		std::cout << " ";
+	std::cout << str;
 }
 
 void	Annuaire::_tHeader(void) const {
