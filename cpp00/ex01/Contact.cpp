@@ -5,112 +5,134 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/15 11:23:43 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/15 11:41:31 by gsharony         ###   ########.fr       */
+/*   Created: 2020/10/16 11:14:06 by gsharony          #+#    #+#             */
+/*   Updated: 2020/10/19 09:20:50 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-Contact::Contact() {}
+Contact::Contact(void) {}
 
-Contact::~Contact() {}
+Contact::~Contact(void) {}
 
-void Contact::Query(std::string name) {
-	std::string cmd;
-
-	std::getline(std::cin, cmd);
-	if (!(name.compare("first_name")))
-		this->_first_name = cmd;
-	else if (!(name.compare("last_name")))
-		this->_last_name = cmd;
-	else if (!(name.compare("nickname")))
-		this->_nickname = cmd;
-	else if (!(name.compare("login")))
-		this->_login = cmd;
-	else if (!(name.compare("postal_address")))
-		this->_postal_address = cmd;
-	else if (!(name.compare("email_address")))
-		this->_email_address = cmd;
-	else if (!(name.compare("phone_number")))
-		this->_phone_number = cmd;
-	else if (!(name.compare("birthday_date")))
-		this->_birthday_date = cmd;
-	else if (!(name.compare("favorite_meal")))
-		this->_favorite_meal = cmd;
-	else if (!(name.compare("underwear_color")))
-		this->_underwear_color = cmd;
-	else if (!(name.compare("darkest_secret")))
-		this->_darkest_secret = cmd;
+void	Contact::getAll(void) const {
+	std::cout << "First Name: " << this->getFirstName() << std::endl;
+	std::cout << "Last Name: " << this->getLastName() << std::endl;
+	std::cout << "Nickname: " << this->getNickname() << std::endl;
+	std::cout << "Login: " << this->getLogin() << std::endl;
+	std::cout << "Postal Address: " << this->getPostalAddress() << std::endl;
+	std::cout << "Email Address: " << this->getEmailAddress() << std::endl;
+	std::cout << "Phone Number: " << this->getPhoneNumber() << std::endl;
+	std::cout << "Birthday Date: " << this->getBirthdayDate() << std::endl;
+	std::cout << "Favorite Meal: " << this->getFavoriteMeal() << std::endl;
+	std::cout << "Underwear Color: " << this->getUnderwearColor() << std::endl;
+	std::cout << "Darkest Secret: " << this->getDarkestSecret() << std::endl;
 }
 
-void Contact::Insert(std::string name) {
-	if (!(name.compare("first_name")))
-		std::cout << "First Name: ";
-	else if (!(name.compare("last_name")))
-		std::cout << "Last Name: ";
-	else if (!(name.compare("nickname")))
-		std::cout << "Nickname: ";
-	else if (!(name.compare("login")))
-		std::cout << "Login: ";
-	else if (!(name.compare("postal_address")))
-		std::cout << "Postal Address: ";
-	else if (!(name.compare("email_address")))
-		std::cout << "Email Address: ";
-	else if (!(name.compare("phone_number")))
-		std::cout << "Phone Number: ";
-	else if (!(name.compare("birthday_date")))
-		std::cout << "Birthday Date: ";
-	else if (!(name.compare("favorite_meal")))
-		std::cout << "Favorite Meal: ";
-	else if (!(name.compare("underwear_color")))
-		std::cout << "Underwear Color: ";
-	else if (!(name.compare("darkest_secret")))
-		std::cout << "Darkest Secret: ";
-	Query(name);
+void	Contact::setFirstName(void) {
+	this->_first_name = this->_input("First Name");
+	return;
 }
 
-void Contact::Print(std::string str) {
-	size_t i;
-
-	i = 0;
-	while (i < 9) {
-		if (i < str.length())
-			std::cout << str[i];
-		else
-			std::cout << " ";
-		i++;
-	}
-	if (str.length() == 10)
-		std::cout << str[i];
-	else if (str.length() > 10)
-		std::cout << ".";
-	else
-		std::cout << " ";
+void	Contact::setLastName(void) {
+	this->_last_name = this->_input("Last Name");
+	return;
 }
 
-void Contact::Show(int i) {
-	std::cout << "|";
-	std::cout << i + 1 << "         ";
-	std::cout << "|";
-	Print(this->_first_name);
-	std::cout << "|";
-	Print(this->_last_name);
-	std::cout << "|";
-	Print(this->_nickname);
-	std::cout << "|" << std::endl;
+void	Contact::setNickname(void) {
+	this->_nickname = this->_input("Nickname");
+	return;
 }
 
-void Contact::getInfo() {
-	std::cout << "First Name: " << this->_first_name << std::endl;
-	std::cout << "Last Name: " << this->_last_name << std::endl;
-	std::cout << "Nickname: " << this->_nickname << std::endl;
-	std::cout << "Login: " << this->_login << std::endl;
-	std::cout << "Postal Address: " << this->_postal_address << std::endl;
-	std::cout << "Email Address: " << this->_email_address << std::endl;
-	std::cout << "Phone Number: " << this->_phone_number << std::endl;
-	std::cout << "Birthday Date: " << this->_birthday_date << std::endl;
-	std::cout << "Favorite Meal: " << this->_favorite_meal << std::endl;
-	std::cout << "Underwear Color: " << this->_underwear_color << std::endl;
-	std::cout << "Darkest Secret: " << this->_darkest_secret << std::endl;
+void	Contact::setLogin(void) {
+	this->_login = this->_input("Login");
+	return;
+}
+
+void	Contact::setPostalAddress(void) {
+	this->_postal_address = this->_input("Postal Address");
+	return;
+}
+
+void	Contact::setEmailAddress(void) {
+	this->_email_address = this->_input("Email Address");
+	return;
+}
+
+void	Contact::setPhoneNumber(void) {
+	this->_phone_number = this->_input("Phone Number");
+	return;
+}
+
+void	Contact::setBirthdayDate(void) {
+	this->_birthday_date = this->_input("Birthday Date");
+	return;
+}
+
+void	Contact::setFavoriteMeal(void) {
+	this->_favorite_meal = this->_input("Favorite Meal");
+	return;
+}
+
+void	Contact::setUnderwearColor(void) {
+	this->_underwear_color = this->_input("Underwear Color");
+	return;
+}
+
+void	Contact::setDarkestSecret(void) {
+	this->_darkest_secret = this->_input("Darkest Secret");
+	return;
+}
+
+std::string	Contact::getFirstName(void) const {
+	return this->_first_name;
+}
+
+std::string	Contact::getLastName(void) const {
+	return this->_last_name;
+}
+
+std::string	Contact::getNickname(void) const {
+	return this->_nickname;
+}
+
+std::string	Contact::getLogin(void) const {
+	return this->_login;
+}
+
+std::string	Contact::getPostalAddress(void) const {
+	return this->_postal_address;
+}
+
+std::string	Contact::getEmailAddress(void) const {
+	return this->_email_address;
+}
+
+std::string	Contact::getPhoneNumber(void) const {
+	return this->_phone_number;
+}
+
+std::string	Contact::getBirthdayDate(void) const {
+	return this->_birthday_date;
+}
+
+std::string	Contact::getFavoriteMeal(void) const {
+	return this->_favorite_meal;
+}
+
+std::string	Contact::getUnderwearColor(void) const {
+	return this->_underwear_color;
+}
+
+std::string	Contact::getDarkestSecret(void) const {
+	return this->_darkest_secret;
+}
+
+std::string	Contact::_input(std::string str) const {
+	std::string tmp;
+
+	std::cout << str << ": ";
+	std::getline(std::cin, tmp);
+	return (tmp);
 }

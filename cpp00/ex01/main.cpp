@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/13 10:47:39 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/13 10:47:39 by gsharony         ###   ########.fr       */
+/*   Created: 2020/10/16 10:20:29 by gsharony          #+#    #+#             */
+/*   Updated: 2020/10/19 09:20:45 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		main(int argc, char **argv) {
 	while (true) {
 		if ((i = command())) {
 			if (i == 1)
-				a.newContact();
+				a.add();
 			if (i == 2)
 				a.search();
 		}

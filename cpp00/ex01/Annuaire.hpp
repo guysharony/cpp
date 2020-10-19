@@ -5,30 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/13 10:47:14 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/15 11:37:40 by gsharony         ###   ########.fr       */
+/*   Created: 2020/10/16 10:59:57 by gsharony          #+#    #+#             */
+/*   Updated: 2020/10/19 08:58:34 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ANNUAIRE_CLASS_HPP
 # define ANNUAIRE_CLASS_HPP
+
+# include <iostream>
+# include <string>
 # include "Contact.hpp"
 
-class Annuaire
-{
+class Annuaire {
 	public:
-		Annuaire();
-		~Annuaire();
+		Annuaire(void);
+		~Annuaire(void);
 
-		void newContact();
-		void showContact();
-		void search();
+		bool add(void);
+		bool search(void) const;
 
 	private:
-		int	total;
-		Contact c[8];
-		int _sHeader();
-		void _sFooter();
+		int	_total;
+
+		void _insert(void);
+		void _tHeader(void) const;
+		void _tBody(void) const;
+		void _tFooter(void) const;
+		void _print(std::string str) const;
+		
+		Contact _c[8];
 };
 
 #endif

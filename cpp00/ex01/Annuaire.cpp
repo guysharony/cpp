@@ -5,72 +5,100 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/13 10:47:07 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/15 11:26:23 by gsharony         ###   ########.fr       */
+/*   Created: 2020/10/16 11:02:42 by gsharony          #+#    #+#             */
+/*   Updated: 2020/10/19 09:20:53 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Annuaire.hpp"
 
-Annuaire::Annuaire() {
-	total = 0;
-	return;
-}
+Annuaire::Annuaire(void) : _total(0) {}
 
-Annuaire::~Annuaire() {}
+Annuaire::~Annuaire(void) {}
 
-void	Annuaire::newContact() {
-	if (total < 8) {
-		c[total].Insert("first_name");
-		c[total].Insert("last_name");
-		c[total].Insert("nickname");
-		c[total].Insert("login");
-		c[total].Insert("postal_address");
-		c[total].Insert("email_address");
-		c[total].Insert("phone_number");
-		c[total].Insert("birthday_date");
-		c[total].Insert("favorite_meal");
-		c[total].Insert("underwear_color");
-		c[total].Insert("darkest_secret");
-		total++;
-	} else {
-		std::cout << "Your phonebook is full!" << std::endl;
+bool	Annuaire::add(void) {
+	if (this->_total >= 8) {
+		std::cout << "Phonebook is full!" << std::endl;
+		return (false);
 	}
+	this->_insert();
+	this->_total++;
+	return (true);
 }
 
-void	Annuaire::showContact() {
+bool	Annuaire::search(void) const {
 	std::string cmd;
 	int			index;
-
+	
+	this->_tHeader();
+	this->_tBody();
+	this->_tFooter();
 	std::cout << "Index: ";
 	std::getline(std::cin, cmd);
 	index = atoi(cmd.c_str());
-	if (index > 0 && index <= total && cmd.length() == 1) {
-		c[index - 1].getInfo();
+	if (index > 0 && index <= this->_total && cmd.length() == 1) {
+		this->_c[index - 1].getAll();
 	} else {
 		std::cout << "Index not valid." << std::endl;
 	}
+	return (true);
 }
 
-void	Annuaire::search() {
-	int i;
+void	Annuaire::_insert(void) {
+	this->_c[this->_total].setFirstName();
+	this->_c[this->_total].setLastName();
+	this->_c[this->_total].setNickname();
+	this->_c[this->_total].setLogin();
+	this->_c[this->_total].setPostalAddress();
+	this->_c[this->_total].setEmailAddress();
+	this->_c[this->_total].setPhoneNumber();
+	this->_c[this->_total].setBirthdayDate();
+	this->_c[this->_total].setFavoriteMeal();
+	this->_c[this->_total].setUnderwearColor();
+	this->_c[this->_total].setDarkestSecret();
+}
 
-	i = _sHeader();
-	while (i < total) {
-		c[i].Show(i);
+void	Annuaire::_print(std::string str) const {
+	size_t i;
+
+	i = 0;
+	while (i < 9) {
+		if (i < str.length())
+			std::cout << str[i];
+		else
+			std::cout << " ";
 		i++;
 	}
-	_sFooter();
-	showContact();
+	if (str.length() == 10)
+		std::cout << str[i];
+	else if (str.length() > 10)
+		std::cout << ".";
+	else
+		std::cout << " ";
 }
 
-int		Annuaire::_sHeader() {
+void	Annuaire::_tHeader(void) const {
 	std::cout << "|----------|----------|----------|----------|" << std::endl;
 	std::cout << "|index     |first name|last name |nickname  |" << std::endl;
 	std::cout << "|----------|----------|----------|----------|" << std::endl;
-	return (0);
 }
 
-void	Annuaire::_sFooter() {
+void	Annuaire::_tBody(void) const {
+	size_t	n;
+
+	n = 0;
+	while (n < this->_total) {
+		std::cout << "|" << n + 1 << "         |";
+		this->_print(this->_c[n].getFirstName());
+		std::cout << "|";
+		this->_print(this->_c[n].getLastName());
+		std::cout << "|";
+		this->_print(this->_c[n].getNickname());
+		std::cout << "|" << std::endl;
+		n++;
+	}
+}
+
+void	Annuaire::_tFooter(void) const {
 	std::cout << "|----------|----------|----------|----------|" << std::endl;
 }
