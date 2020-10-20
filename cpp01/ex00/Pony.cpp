@@ -5,24 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/13 10:51:45 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/13 13:29:19 by gsharony         ###   ########.fr       */
+/*   Created: 2020/10/20 12:40:04 by gsharony          #+#    #+#             */
+/*   Updated: 2020/10/20 13:02:33 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Pony.hpp"
 
-Pony::Pony(std::string name, std::string age) {
-	this->_name = name;
-	this->_age = age;
+Pony::Pony(std::string name, std::string activity, int age) : _name(name), _favorite_activity(activity), _age(age) {
+	std::cout << " [" << this->_name << " is here]" << std::endl;
+	return;
 }
 
-Pony::~Pony(void) {}
-
-void 	Pony::nameIs(void) {
-	std::cout << "My name is " << this->_name << "!" << std::endl;
+Pony::~Pony(void) {
+	std::cout << " [" << this->_name << " went back home]" << std::endl;
+	return;
 }
 
-void 	Pony::ageIs(void) {
-	std::cout << "I'm " << this->_age << " years old!" << std::endl;
+void	Pony::age(void) const {
+	std::cout << " [" << this->_name << "]: I'm " << this->_age << " years old." << std::endl;
+	return;
+}
+
+void	Pony::activity(void) const {
+	std::cout << " [" << this->_name << "]: My favorite activity is " << this->_favorite_activity << "." << std::endl;
+	return;
 }

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/13 10:51:47 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/13 13:20:38 by gsharony         ###   ########.fr       */
+/*   Created: 2020/10/20 12:44:12 by gsharony          #+#    #+#             */
+/*   Updated: 2020/10/20 13:00:20 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,21 @@
 # define PONY_CLASS_HPP
 
 #include <iostream>
+#include <string>
 
-class Pony
-{
+class Pony {
 	public:
-		Pony(std::string name, std::string age);
-		~Pony();
+		Pony(std::string name, std::string activity, int age);
+		~Pony(void);
 
-		void nameIs(void);
-		void ageIs(void);
+		void	age(void) const;
+		void	activity(void) const;
 
 	private:
 		std::string _name;
-		std::string _age;
+		std::string _favorite_activity;
+		int 		_age;
+
 };
 
 #endif
