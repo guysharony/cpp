@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 14:35:38 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/20 15:15:49 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/21 09:47:27 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ class ZombieEvent {
 		~ZombieEvent(void);
 
 		void 	setZombieType(std::string const &str);
-		Zombie 	*newZombie(std::string name);
+		
+		Zombie 	*newZombie(std::string const &name);
+		Zombie 	*randomChump(void);
+
 	private:
 		std::string _type;
 };
