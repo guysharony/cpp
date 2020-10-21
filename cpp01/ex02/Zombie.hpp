@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 14:35:31 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/21 10:19:02 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/21 10:40:27 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Zombie {
 		~Zombie(void);
 
 		void	advert(void) const;
-		
+		void	announce(void) const;
 	private:
 		std::string _name;
 		std::string _type;

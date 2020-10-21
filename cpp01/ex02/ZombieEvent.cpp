@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 14:35:35 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/21 10:19:15 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/21 10:45:12 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,11 @@ Zombie 	*ZombieEvent::randomChump(void) {
 	std::string	tmp;
 	Zombie		*z;
 	
-	tmp = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	for(int len = 0; len < 10; len++) {
+	tmp = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
+	for(int len = 0; len < 5; len++) {
 		str += tmp[rand() % 52];
 	}
 	z = this->newZombie(str);
+	z->announce();
 	return (z);
 }

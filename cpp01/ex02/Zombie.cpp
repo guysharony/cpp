@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 14:35:18 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/21 10:19:06 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/21 10:40:39 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,10 @@ Zombie::~Zombie(void) {}
 
 void	Zombie::advert(void) const {
 	std::cout << "<" << this->_name << " (" << this->_type << ")> Braiiiiiiinnnssss ..." << std::endl;
+	return;
+}
+
+void	Zombie::announce(void) const {
+	this->advert();
+	return;
 }
