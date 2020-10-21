@@ -6,15 +6,15 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 14:35:16 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/21 10:54:43 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/21 10:56:26 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ZombieEvent.hpp"
 
 int	main(void) {
-	Zombie	*zombie;
 	ZombieEvent	*zombieEvent;
+	Zombie		*zombie;
 
 	zombie = new Zombie("Michael", "Hacker");
 	zombie->announce();
