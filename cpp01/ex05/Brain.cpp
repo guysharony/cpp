@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 10:42:13 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/22 11:46:40 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/22 14:47:46 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 Brain::Brain(void): _IQ(126), _neurons(1456725) {}
 
-Brain::~Brain(void) {};
+Brain::~Brain(void) {}
 
-int	Brain::getIQ(void) {
+int	Brain::getIQ(void) const {
 	return (this->_IQ);
 }
 
-int	Brain::getNeurons(void) {
+int	Brain::getNeurons(void) const {
 	return (this->_neurons);
 }
 
-std::string Brain::identify(void) {
-	std::stringstream stream;
-	stream << "0x" << std::uppercase << std::hex << (long)this;
-	return (stream.str());
+std::string	Brain::identify(void) const {
+	std::stringstream tmp;
+	tmp << "0x" << std::uppercase << std::hex << (long)this;
+	return (tmp.str());
 }

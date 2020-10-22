@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 10:42:06 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/22 11:53:18 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/22 14:54:20 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ class Human {
 		Human(void);
 		~Human(void);
 		
-		std::string identify(void);
-		Brain		getBrain(void) const;
+		const Brain &getBrain(void) const;
+		std::string identify(void) const;
 		
 	private:
-		Brain* _brain;
+		Brain _brain;
 };
 
 #endif

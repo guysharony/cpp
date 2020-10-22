@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 10:42:10 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/22 11:46:37 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/22 14:47:41 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ class Brain {
 		Brain(void);
 		~Brain(void);
 		
-		int getIQ(void);
-		int getNeurons(void);
+		int getIQ(void) const;
+		int getNeurons(void) const;
 		
-		std::string identify(void);
+		std::string identify(void) const;
 		
 	private:
 		int	_IQ;
