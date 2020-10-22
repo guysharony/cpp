@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ZombieEvent.cpp                                    :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/20 14:35:35 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/22 09:58:10 by gsharony         ###   ########.fr       */
+/*   Created: 2020/10/21 13:06:52 by gsharony          #+#    #+#             */
+/*   Updated: 2020/10/22 10:22:13 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ZombieEvent.hpp"
+#include "ZombieHorde.hpp"
 
-ZombieEvent::ZombieEvent(void) {
-	this->_type = "";
-}
-
-ZombieEvent::~ZombieEvent(void) {}
-
-void 	ZombieEvent::setZombieType(std::string const &type) {
-	this->_type = type;
-	return;
-}
-
-Zombie 	*ZombieEvent::newZombie(std::string const &name) {
-	return (new Zombie(name, this->_type));
-}
-
-Zombie 	*ZombieEvent::randomChump(void) {
+ZombieHorde::ZombieHorde(int n) {
 	std::string	str;
 	std::string	tmp;
-	Zombie		*z;
 	
+	this->_total = n;
+	this->_zombie = new Zombie[n];
 	tmp = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
-	for(int len = 0; len < 5; len++) {
-		str += tmp[rand() % 52];
+	for (int i = 0; i < n; i++) {
+		for(int len = 0; len < 5; len++) {
+			str += tmp[rand() % 52];
+		}
+		this->_zombie[i].setName(str);
+		this->_zombie[i].setType("Random");
+		str = "";
 	}
-	z = this->newZombie(str);
-	z->announce();
-	return (z);
+}
+
+ZombieHorde::~ZombieHorde(void) {}
+
+void	ZombieHorde::announce(void) const {
+	for(int i = 0; i < this->_total; i++) {
+		this->_zombie[i].announce();
+	}
 }
