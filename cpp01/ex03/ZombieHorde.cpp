@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 13:06:52 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/22 10:22:13 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/22 10:24:56 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ ZombieHorde::ZombieHorde(int n) {
 	}
 }
 
-ZombieHorde::~ZombieHorde(void) {}
+ZombieHorde::~ZombieHorde(void) {
+	delete [] this->_zombie;
+}
 
 void	ZombieHorde::announce(void) const {
 	for(int i = 0; i < this->_total; i++) {
