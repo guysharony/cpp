@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 10:42:10 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/22 11:35:30 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/22 11:46:37 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Brain {
 		int getIQ(void);
 		int getNeurons(void);
 		
-		std::string identifier(void);
+		std::string identify(void);
 		
 	private:
 		int	_IQ;

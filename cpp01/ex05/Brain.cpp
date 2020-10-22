@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 10:42:13 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/22 11:35:05 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/22 11:46:40 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	Brain::getNeurons(void) {
 	return (this->_neurons);
 }
 
-std::string Brain::identifier(void) {
+std::string Brain::identify(void) {
 	std::stringstream stream;
 	stream << "0x" << std::uppercase << std::hex << (long)this;
 	return (stream.str());
