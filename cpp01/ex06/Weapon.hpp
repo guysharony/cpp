@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 14:56:50 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/22 15:05:45 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/23 09:46:16 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 class Weapon {
 	public:
-		Weapon(void);
+		Weapon(std::string const &type);
 		~Weapon(void);
 
 		const std::string &getType(void) const;

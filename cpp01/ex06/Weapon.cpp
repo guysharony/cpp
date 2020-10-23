@@ -6,13 +6,13 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 14:56:48 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/22 15:06:19 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/23 09:46:17 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-Weapon::Weapon(void) {}
+Weapon::Weapon(std::string const &type): type(type) {}
 
 Weapon::~Weapon(void) {}
 
