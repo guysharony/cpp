@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 11:31:11 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/23 11:35:49 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/23 11:48:15 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include <fstream>
 
 class Replace {
 	public:
