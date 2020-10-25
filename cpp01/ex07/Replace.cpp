@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 11:32:38 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/25 10:33:48 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/25 17:33:23 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	Replace::verify(void) const {
 			std::cout << "Replace string is too short!" << std::endl;
 		return (0);
 	}
-	ifs.open(this->filename, std::ifstream::in);
+	ifs.open(this->filename);
 	if (!ifs.is_open()) {
 		std::cout << "File [" << this->filename << "] doesn't exist!" << std::endl;
 		return (0);
@@ -44,7 +44,7 @@ void	Replace::change(void) const {
 	std::string			str;
 	size_t				pos;
 	
-	ifs.open(this->filename, std::ifstream::in);
+	ifs.open(this->filename);
 	oss << ifs.rdbuf();
 	str = oss.str();
 	while ((pos = str.find(this->s1)) != std::string::npos) {
