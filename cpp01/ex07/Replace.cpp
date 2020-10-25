@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 11:32:38 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/25 09:22:58 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/25 09:26:35 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	Replace::verify(void) const {
 
 void	Replace::change(void) const {
 	std::ifstream 		ifs;
+	std::ofstream 		ofs(this->filename + ".replace");
 	std::ostringstream	oss;
 	std::string			str;
 	size_t				pos;
@@ -49,6 +50,7 @@ void	Replace::change(void) const {
 	while ((pos = str.find(this->s1)) != std::string::npos) {
 		str.replace(pos, std::string(this->s1).length(), this->s2);
 	}
-	std::cout << str << std::endl;
 	ifs.close();
+	ofs << str;
+	ofs.close();
 }
