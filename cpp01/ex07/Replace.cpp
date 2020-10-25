@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 11:32:38 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/23 11:54:46 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/25 09:22:58 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,29 @@ int	Replace::verify(void) const {
 			std::cout << "Search string is too short!" << std::endl;
 		if (this->s2.length() < 1)
 			std::cout << "Replace string is too short!" << std::endl;
-		return (1);
+		return (0);
 	}
-	ifs.open(filename, std::ifstream::in);
+	ifs.open(this->filename, std::ifstream::in);
 	if (!ifs.is_open()) {
-		std::cout << "File [" << filename << "] doesn't exist!" << std::endl;
-		return (1);
+		std::cout << "File [" << this->filename << "] doesn't exist!" << std::endl;
+		return (0);
 	}
-	return (0);
+	ifs.close();
+	return (1);
+}
+
+void	Replace::change(void) const {
+	std::ifstream 		ifs;
+	std::ostringstream	oss;
+	std::string			str;
+	size_t				pos;
+	
+	ifs.open(this->filename, std::ifstream::in);
+	oss << ifs.rdbuf();
+	str = oss.str();
+	while ((pos = str.find(this->s1)) != std::string::npos) {
+		str.replace(pos, std::string(this->s1).length(), this->s2);
+	}
+	std::cout << str << std::endl;
+	ifs.close();
 }
