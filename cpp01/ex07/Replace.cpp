@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/23 11:32:38 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/25 09:26:35 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/25 10:33:48 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,5 @@ void	Replace::change(void) const {
 	ifs.close();
 	ofs << str;
 	ofs.close();
+	return;
 }
