@@ -6,13 +6,13 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 14:56:41 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/23 10:14:43 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/25 17:19:08 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string const &name): name(name), weapon(NULL) {}
+HumanB::HumanB(std::string name): name(name), weapon(NULL) {}
 
 HumanB::~HumanB(void) {}
 

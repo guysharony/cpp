@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 14:56:39 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/23 10:07:01 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/25 17:22:38 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class HumanA {
 	public:
-		HumanA(std::string const &name, Weapon &weapon);
+		HumanA(std::string name, Weapon &weapon);
 		~HumanA(void);
 		
 		void attack(void) const;

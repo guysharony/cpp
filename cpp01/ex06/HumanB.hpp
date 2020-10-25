@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/22 14:56:43 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/23 10:14:21 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/25 17:19:04 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class HumanB {
 	public:
-		HumanB(std::string const &name);
+		HumanB(std::string name);
 		~HumanB(void);
 		
 		void attack(void) const;
