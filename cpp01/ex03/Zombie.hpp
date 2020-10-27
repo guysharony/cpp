@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 13:06:43 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/22 10:16:26 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/27 09:06:15 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include <cstdlib>
 
 class Zombie {
 	public:
