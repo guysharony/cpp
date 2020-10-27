@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 14:35:35 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/22 09:58:10 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/27 08:57:18 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ ZombieEvent::ZombieEvent(void) {
 
 ZombieEvent::~ZombieEvent(void) {}
 
-void 	ZombieEvent::setZombieType(std::string const &type) {
+void 	ZombieEvent::setZombieType(std::string type) {
 	this->_type = type;
 	return;
 }
 
-Zombie 	*ZombieEvent::newZombie(std::string const &name) {
+Zombie 	*ZombieEvent::newZombie(std::string name) {
 	return (new Zombie(name, this->_type));
 }
 

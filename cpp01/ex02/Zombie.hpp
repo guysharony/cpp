@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 14:35:31 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/22 10:18:40 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/27 08:57:47 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 # include <iostream>
 # include <string>
+# include <cstdlib>
 
 class Zombie {
 	public:
-		Zombie(void);
-		Zombie(std::string const &name, std::string const &type);
+		Zombie(std::string name, std::string type);
 		~Zombie(void);
 
 		void	advert(void) const;

@@ -6,15 +6,13 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/20 14:35:18 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/22 10:18:42 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/27 08:57:49 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie(void) {}
-
-Zombie::Zombie(std::string const &name, std::string const &type): _name(name), _type(type) {}
+Zombie::Zombie(std::string name, std::string type): _name(name), _type(type) {}
 
 Zombie::~Zombie(void) {}
 
