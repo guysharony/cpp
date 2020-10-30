@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 09:50:19 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/30 09:22:23 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/10/30 09:29:55 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include <cmath>
 
 class Fixed {
 	public:
