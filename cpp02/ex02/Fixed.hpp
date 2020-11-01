@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 09:50:19 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/01 12:11:40 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/01 15:16:28 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 class Fixed {
 	public:
 		Fixed(void);
-		Fixed(const int cint);
-		Fixed(const float cfloat);
+		Fixed(int const cint);
+		Fixed(float const cfloat);
 		Fixed(Fixed const & src);
 		~Fixed(void);
 
@@ -32,10 +32,10 @@ class Fixed {
 		bool operator==(Fixed const & rhs) const;
 		bool operator!=(Fixed const & rhs) const;
 
-		Fixed operator+(Fixed const & rhs);
-		Fixed operator-(Fixed const & rhs);
-		Fixed operator*(Fixed const & rhs);
-		Fixed operator/(Fixed const & rhs);
+		Fixed operator+(Fixed const & rhs) const;
+		Fixed operator-(Fixed const & rhs) const;
+		Fixed operator*(Fixed const & rhs) const;
+		Fixed operator/(Fixed const & rhs) const;
 
 		Fixed & operator=(Fixed const & rhs);
 

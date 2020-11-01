@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 09:50:17 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/01 12:14:30 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/01 15:16:39 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Fixed & Fixed::operator=(Fixed const &rhs) {
 	return (*this);
 }
 
-void Fixed::setRawBits(const int raw) {
+void Fixed::setRawBits(int const raw) {
 	this->_val = raw;
 }
 
@@ -67,27 +67,27 @@ bool Fixed::operator!=(Fixed const & rhs) const {
 	return (this->_val != rhs.getRawBits());
 }
 
-Fixed Fixed::operator+(Fixed const & rhs) {
+Fixed Fixed::operator+(Fixed const & rhs) const {
 	Fixed tmp;
 	tmp.setRawBits(this->_val + rhs.getRawBits());
 	return (tmp);
 }
 
-Fixed Fixed::operator-(Fixed const & rhs) {
+Fixed Fixed::operator-(Fixed const & rhs) const {
 	Fixed tmp;
 	tmp.setRawBits(this->_val - rhs.getRawBits());
 	return (tmp);
 }
 
-Fixed Fixed::operator*(Fixed const & rhs) {
+Fixed Fixed::operator*(Fixed const & rhs) const {
 	Fixed tmp;
 	tmp.setRawBits((this->_val * rhs.getRawBits()) >> this->_nbits);
 	return (tmp);
 }
 
-Fixed Fixed::operator/(Fixed const & rhs) {
+Fixed Fixed::operator/(Fixed const & rhs) const {
 	Fixed tmp;
-	tmp.setRawBits((this->_val << rhs.getRawBits()) / this->_nbits);
+	tmp.setRawBits((this->_val << this->_nbits) / rhs.getRawBits());
 	return (tmp);
 }
 
