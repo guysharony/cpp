@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 09:50:19 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/30 10:31:40 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/01 10:56:21 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,14 @@ class Fixed {
 
 		Fixed operator+(Fixed const & rhs);
 		Fixed operator-(Fixed const & rhs);
+		Fixed operator*(Fixed const & rhs);
+		Fixed operator/(Fixed const & rhs);
 
 		Fixed & operator=(Fixed const & rhs);
 
+		Fixed & operator++(void);
+		Fixed operator++(int);
+		
 		float toFloat(void) const;
 		int toInt(void) const;
 		
