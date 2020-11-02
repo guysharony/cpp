@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 09:50:17 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/01 15:16:39 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/02 10:12:36 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 Fixed::Fixed(void): _val(0) {}
 
-Fixed::Fixed(const int cint): _val(cint << this->_nbits) {}
+Fixed::Fixed(int const cint): _val(cint << this->_nbits) {}
 
-Fixed::Fixed(const float cfloat): _val((float)roundf(cfloat * (1 << this->_nbits))) {}
+Fixed::Fixed(float const cfloat): _val((float)roundf(cfloat * (1 << this->_nbits))) {}
 
 Fixed::Fixed(Fixed const & src) { *this = src; }
 

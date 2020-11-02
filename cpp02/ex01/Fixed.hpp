@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 09:50:19 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/30 09:29:55 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/02 10:12:08 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 class Fixed {
 	public:
 		Fixed(void);
-		Fixed(const int cint);
-		Fixed(const float cfloat);
+		Fixed(int const cint);
+		Fixed(float const cfloat);
 		Fixed(Fixed const & src);
 		~Fixed(void);
 
