@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 09:50:17 by gsharony          #+#    #+#             */
-/*   Updated: 2020/10/30 09:26:51 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/02 08:34:22 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,6 @@ int Fixed::getRawBits(void) const {
 }
 
 std::ostream & operator<<(std::ostream & o, Fixed const & rhs) {
-	o << rhs.getRawBits();
+	o << rhs.toFloat();
 	return (o);
 }
