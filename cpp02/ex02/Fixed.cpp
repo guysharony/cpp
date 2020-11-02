@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 09:50:17 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/02 10:12:36 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/02 10:47:20 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Fixed::Fixed(Fixed const & src) { *this = src; }
 
 Fixed::~Fixed(void) {}
 
-Fixed & Fixed::operator=(Fixed const &rhs) {
+Fixed & Fixed::operator=(Fixed const & rhs) {
 	this->_val = rhs.getRawBits();
 	return (*this);
 }
