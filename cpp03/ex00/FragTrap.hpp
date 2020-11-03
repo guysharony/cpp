@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:53:43 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/03 10:09:49 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/03 11:23:01 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 class FragTrap {
 	public:
+		FragTrap(void);
 		FragTrap(std::string const name);
 		FragTrap(FragTrap const & src);
 		~FragTrap(void);
@@ -30,6 +31,8 @@ class FragTrap {
 		void beRepaired(unsigned int amount);
 
 		void vaulthunter_dot_exe(std::string const & target);
+		
+		void sausageSword(std::string const & target);
 		
 	private:
 		unsigned int _hitPoints;
