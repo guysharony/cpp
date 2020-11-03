@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 12:53:43 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/03 16:04:44 by gsharony         ###   ########.fr       */
+/*   Created: 2020/11/03 15:59:53 by gsharony          #+#    #+#             */
+/*   Updated: 2020/11/03 16:05:04 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_CLASS_HPP
-# define FRAGTRAP_CLASS_HPP
+#ifndef SCAVTRAP_CLASS_HPP
+# define SCAVTRAP_CLASS_HPP
 
 # include <iostream>
 # include <string>
 
-class FragTrap {
+class ScravTrap {
 	public:
-		FragTrap(void);
-		FragTrap(std::string const name);
-		FragTrap(FragTrap const & src);
-		~FragTrap(void);
+		ScravTrap(void);
+		ScravTrap(std::string const name);
+		ScravTrap(ScravTrap const & src);
+		~ScravTrap(void);
 		
-		FragTrap & operator=(FragTrap const & rhs);
+		ScravTrap & operator=(ScravTrap const & rhs);
 
 		void rangedAttack(std::string const & target);
 		void meleeAttack(std::string const & target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
-
-		void vaulthunter_dot_exe(std::string const & target);
 		
 	private:
 		unsigned int _hitPoints;
@@ -41,6 +39,7 @@ class FragTrap {
 		unsigned int _meleeAttackDamage;
 		unsigned int _rangedAttackDamage;
 		unsigned int _armorDamageReduction;
+
 };
 
 #endif
