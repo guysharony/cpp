@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:53:39 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/03 11:40:50 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/04 09:19:04 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ void FragTrap::beRepaired(unsigned int amount) {
 
 void FragTrap::vaulthunter_dot_exe(std::string const & target) {
 	if (this->_energyPoints < 25) {
-		std::cout << "FR4G-TP, vous n'avez pas assez d'énérgie pour cette attaque !" << std::endl;
+		std::cout << "FR4G-TP " << this->_name << ", vous n'avez pas assez d'énérgie pour cette attaque !" << std::endl;
 	} else {
 		std::string attack[5] = {"un épée saucisse", "le moonwalk à l'envers", "l'hypnodance", "la rondade de la mort", "un falafel des enfers"};
 		std::cout << "FR4G-TP " << this->_name << " attaque " << target << " avec " << attack[rand() % 5] << ", causant " << 25 << " points de dégâts !" << std::endl;
