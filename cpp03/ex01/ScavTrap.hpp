@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 15:59:53 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/03 16:05:04 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/04 09:19:40 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,22 @@
 # include <iostream>
 # include <string>
 
-class ScravTrap {
+class ScavTrap {
 	public:
-		ScravTrap(void);
-		ScravTrap(std::string const name);
-		ScravTrap(ScravTrap const & src);
-		~ScravTrap(void);
+		ScavTrap(void);
+		ScavTrap(std::string const name);
+		ScavTrap(ScavTrap const & src);
+		~ScavTrap(void);
 		
-		ScravTrap & operator=(ScravTrap const & rhs);
+		ScavTrap & operator=(ScavTrap const & rhs);
 
 		void rangedAttack(std::string const & target);
 		void meleeAttack(std::string const & target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 		
+		void challengeNewcomer(void);
+
 	private:
 		unsigned int _hitPoints;
 		unsigned int _maxHitPoints;
