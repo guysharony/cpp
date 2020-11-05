@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:53:43 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/03 16:04:40 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/05 08:23:13 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class FragTrap {
 		unsigned int _hitPoints;
 		unsigned int _maxHitPoints;
 		unsigned int _energyPoints;
+		unsigned int _maxEnergyPoints;
 		unsigned int _level;
 		std::string _name;
 		unsigned int _meleeAttackDamage;

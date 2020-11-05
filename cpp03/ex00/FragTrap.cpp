@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:53:39 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/04 09:19:04 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/05 08:23:40 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ FragTrap::FragTrap(void)
 	_hitPoints(100),
 	_maxHitPoints(100),
 	_energyPoints(100),
+	_maxEnergyPoints(100),
 	_level(1),
 	_name("Default"),
 	_meleeAttackDamage(30),
@@ -34,6 +35,7 @@ FragTrap::FragTrap(std::string const name)
 	_hitPoints(100),
 	_maxHitPoints(100),
 	_energyPoints(100),
+	_maxEnergyPoints(100),
 	_level(1),
 	_name(name),
 	_meleeAttackDamage(30),
@@ -65,6 +67,7 @@ FragTrap & FragTrap::operator=(FragTrap const & src) {
 	this->_hitPoints = src._hitPoints;
 	this->_maxHitPoints = src._maxHitPoints;
 	this->_energyPoints = src._energyPoints;
+	this->_maxEnergyPoints = src._maxEnergyPoints;
 	this->_level = src._level;
 	this->_name = src._name;
 	this->_meleeAttackDamage = src._meleeAttackDamage;

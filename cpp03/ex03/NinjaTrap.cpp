@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   NinjaTrap.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/03 15:59:50 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/05 08:26:14 by gsharony         ###   ########.fr       */
+/*   Created: 2020/11/05 08:09:09 by gsharony          #+#    #+#             */
+/*   Updated: 2020/11/05 08:21:26 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
 
-ScavTrap::ScavTrap(void)
+NinjaTrap::NinjaTrap(void)
 :
-	ClapTrap(100, 100, 50, 50, 1, "Default", 20, 15, 3)
+	ClapTrap(60, 60, 120, 120, 1, "Default", 20, 15, 3)
 {
 	srand(time(NULL));
 	std::cout << "FR4G-TP " << this->getName() << " est en préparation..." << std::endl;
@@ -22,16 +22,16 @@ ScavTrap::ScavTrap(void)
 	return;
 }
 
-ScavTrap::ScavTrap(std::string const name)
+NinjaTrap::NinjaTrap(std::string const name)
 :
-	ClapTrap(100, 100, 50, 50, 1, name, 20, 15, 3)
+	ClapTrap(60, 60, 120, 120, 1, name, 60, 5, 0)
 {
 	srand(time(NULL));
 	std::cout << "FR4G-TP " << this->getName() << " va être déployé !" << std::endl;
 	return;
 }
 
-ScavTrap::ScavTrap(ScavTrap const & src)
+NinjaTrap::NinjaTrap(NinjaTrap const & src)
 :
 	ClapTrap(src)
 {
@@ -40,7 +40,7 @@ ScavTrap::ScavTrap(ScavTrap const & src)
 	return;
 }
 
-ScavTrap::~ScavTrap(void) {
+NinjaTrap::~NinjaTrap(void) {
 	if (this->getHitPoints())
 		std::cout << "Félicitation FR4G-TP " << this->getName() << ", vous avez survécu !" << std::endl;
 	else
@@ -48,7 +48,7 @@ ScavTrap::~ScavTrap(void) {
 	return;
 }
 
-ScavTrap & ScavTrap::operator=(ScavTrap const & src) {
+NinjaTrap & NinjaTrap::operator=(NinjaTrap const & src) {
 	this->setHitPoints(src.getHitPoints());
 	this->setMaxHitPoints(src.getMaxHitPoints());
 	this->setEnergyPoints(src.getEnergyPoints());
@@ -59,20 +59,4 @@ ScavTrap & ScavTrap::operator=(ScavTrap const & src) {
 	this->setRangedAttackDamage(src.getRangedAttackDamage());
 	this->setArmorDamageReduction(src.getArmorDamageReduction());
 	return (*this);
-}
-
-void ScavTrap::challengeNewcomer(void) {
-	if (this->getEnergyPoints() < 25) {
-		std::cout << "FR4G-TP " << this->getName() << ", vous n'avez pas assez d'énérgie pour un challenge !" << std::endl;
-	} else {
-		std::string challenge[5] = {
-			"je te défie de vincre ton ennemi en utilisant qu'une seule attaque",
-			"je te défie de rester vivant jusqu'à la fin de ta mission te faire réparé",
-			"je te défie d'arriver à notre point de rendez-vous sans avoir à attaquer tes ennemis",
-			"je te défie de n'utiliser que l'attaque que tu aimes le moins durant toute la mission",
-			"je te défie d'utiliser chaque attaque au moins une seule fois"};
-		std::cout << "FR4G-TP " << this->getName() << ", " << challenge[rand() % 5] << " !" << std::endl;
-		this->setEnergyPoints(this->getEnergyPoints() - 25);
-	}
-	return;
 }
