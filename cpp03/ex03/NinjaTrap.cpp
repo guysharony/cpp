@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 08:09:09 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/05 08:21:26 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/05 16:04:41 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,20 @@ NinjaTrap & NinjaTrap::operator=(NinjaTrap const & src) {
 	this->setRangedAttackDamage(src.getRangedAttackDamage());
 	this->setArmorDamageReduction(src.getArmorDamageReduction());
 	return (*this);
+}
+
+void	NinjaTrap::ninjaShoebox(NinjaTrap const & target) {
+	std::cout << "FR4G-TP " << this->getName() << " attaque " << target.getName() << " avec une chaussure !" << std::endl;
+}
+
+void	NinjaTrap::ninjaShoebox(ClapTrap const & target) {
+	std::cout << "FR4G-TP " << this->getName() << " attaque " << target.getName() << " avec une claquette !" << std::endl;
+}
+
+void	NinjaTrap::ninjaShoebox(FragTrap const & target) {
+	std::cout << "FR4G-TP " << this->getName() << " attaque " << target.getName() << " avec une baguette !" << std::endl;
+}
+
+void	NinjaTrap::ninjaShoebox(ScavTrap const & target) {
+	std::cout << "FR4G-TP " << this->getName() << " attaque " << target.getName() << " avec une attaque inconnue !" << std::endl;
 }
