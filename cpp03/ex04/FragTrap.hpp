@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:53:43 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/06 11:25:18 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/19 10:50:27 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ class FragTrap : public virtual ClapTrap {
 		FragTrap & operator=(FragTrap const & rhs);
 
 		void vaulthunter_dot_exe(std::string const & target);
+
+		unsigned int getHitPoints(void) const;
+		unsigned int getMaxHitPoints(void) const;
+		unsigned int getRangedAttackDamage(void) const;
+		unsigned int getArmorDamageReduction(void) const;
 };
 
 #endif

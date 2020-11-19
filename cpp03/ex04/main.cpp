@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:53:47 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/11 09:49:33 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/19 08:20:44 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int main(void) {
 	b.challengeNewcomer();
 	c.rangedAttack("Human");
 	a.takeDamage(20);
+	c.meleeAttack("Human");
+	a.takeDamage(60);
 
 	std::cout << std::endl;
 	a.beRepaired(20);

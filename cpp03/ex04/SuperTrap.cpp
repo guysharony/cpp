@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 11:15:17 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/13 08:48:15 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/19 10:44:21 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,34 +19,30 @@ SuperTrap::SuperTrap(void)
 	NinjaTrap()
 {
 	srand(time(NULL));
-	this->setHitPoints(FragTrap::getHitPoints());
-	this->setMaxHitPoints(NinjaTrap::getMaxHitPoints());
-	this->setEnergyPoints(NinjaTrap::getEnergyPoints());
-	this->setMaxEnergyPoints(NinjaTrap::getMaxEnergyPoints());
-	this->setLevel(1);
-	this->setName("");
-	this->setMeleeAttackDamage(NinjaTrap::getMeleeAttackDamage());
-	this->setRangedAttackDamage(FragTrap::getRangedAttackDamage());
-	this->setArmorDamageReduction(FragTrap::getArmorDamageReduction());
+	this->_hitPoints = FragTrap::getHitPoints();
+	this->_maxHitPoints = FragTrap::getMaxHitPoints();
+	this->_energyPoints = NinjaTrap::getEnergyPoints();
+	this->_maxEnergyPoints = NinjaTrap::getMaxEnergyPoints();
+	this->_meleeAttackDamage = NinjaTrap::getMeleeAttackDamage();
+	this->_rangedAttackDamage = FragTrap::getRangedAttackDamage();
+	this->_armorDamageReduction = FragTrap::getArmorDamageReduction();
 	return;
 }
 
 SuperTrap::SuperTrap(std::string const name)
 :
-	ClapTrap(0, 0, 0, 0, 0, name, 0, 0, 0),
+	ClapTrap(name),
 	FragTrap(name),
 	NinjaTrap(name)
 {
 	srand(time(NULL));
-	this->setHitPoints(FragTrap::getHitPoints());
-	this->setMaxHitPoints(NinjaTrap::getMaxHitPoints());
-	this->setEnergyPoints(NinjaTrap::getEnergyPoints());
-	this->setMaxEnergyPoints(NinjaTrap::getMaxEnergyPoints());
-	this->setLevel(1);
-	this->setName(name);
-	this->setMeleeAttackDamage(NinjaTrap::getMeleeAttackDamage());
-	this->setRangedAttackDamage(FragTrap::getRangedAttackDamage());
-	this->setArmorDamageReduction(FragTrap::getArmorDamageReduction());
+	this->_hitPoints = FragTrap::getHitPoints();
+	this->_maxHitPoints = FragTrap::getMaxHitPoints();
+	this->_energyPoints = NinjaTrap::getEnergyPoints();
+	this->_maxEnergyPoints = NinjaTrap::getMaxEnergyPoints();
+	this->_meleeAttackDamage = NinjaTrap::_meleeAttackDamage;
+	this->_rangedAttackDamage = FragTrap::getRangedAttackDamage();
+	this->_armorDamageReduction = FragTrap::getArmorDamageReduction();
 	return;
 }
 
@@ -61,14 +57,14 @@ SuperTrap::SuperTrap(SuperTrap const & src)
 SuperTrap::~SuperTrap(void) {}
 
 SuperTrap & SuperTrap::operator=(SuperTrap const & src) {
-	this->setHitPoints(src.getHitPoints());
-	this->setMaxHitPoints(src.getMaxHitPoints());
-	this->setEnergyPoints(src.getEnergyPoints());
-	this->setMaxEnergyPoints(src.getMaxEnergyPoints());
-	this->setLevel(src.getLevel());
-	this->setName(src.getName());
-	this->setMeleeAttackDamage(src.getMeleeAttackDamage());
-	this->setRangedAttackDamage(src.getRangedAttackDamage());
-	this->setArmorDamageReduction(src.getArmorDamageReduction());
+	this->_hitPoints = src.getHitPoints();
+	this->_maxHitPoints = src.getMaxHitPoints();
+	this->_energyPoints = src.getEnergyPoints();
+	this->_maxEnergyPoints = src.getMaxEnergyPoints();
+	this->_level = src.getLevel();
+	this->_name = src.getName();
+	this->_meleeAttackDamage = src.getMeleeAttackDamage();
+	this->_rangedAttackDamage = src.getRangedAttackDamage();
+	this->_armorDamageReduction = src.getArmorDamageReduction();
 	return (*this);
 }

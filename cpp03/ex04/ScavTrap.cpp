@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 15:59:50 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/11 08:56:20 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/19 09:47:26 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,17 @@
 
 ScavTrap::ScavTrap(void)
 :
-	ClapTrap(100, 100, 50, 50, 1, "", 20, 15, 3)
+	ClapTrap("Default")
 {
 	srand(time(NULL));
+	this->_hitPoints = 100;
+	this->_maxHitPoints = 100;
+	this->_energyPoints = 50;
+	this->_maxEnergyPoints = 50;
+	this->_level = 1;
+	this->_meleeAttackDamage = 20;
+	this->_rangedAttackDamage = 15;
+	this->_armorDamageReduction = 3;
 	std::cout << "FR4G-TP " << this->getName() << " est en préparation..." << std::endl;
 	std::cout << "FR4G-TP " << this->getName() << " va être déployé !" << std::endl;
 	return;
@@ -24,9 +32,17 @@ ScavTrap::ScavTrap(void)
 
 ScavTrap::ScavTrap(std::string const name)
 :
-	ClapTrap(100, 100, 50, 50, 1, name, 20, 15, 3)
+	ClapTrap(name)
 {
 	srand(time(NULL));
+	this->_hitPoints = 100;
+	this->_maxHitPoints = 100;
+	this->_energyPoints = 50;
+	this->_maxEnergyPoints = 50;
+	this->_level = 1;
+	this->_meleeAttackDamage = 20;
+	this->_rangedAttackDamage = 15;
+	this->_armorDamageReduction = 3;
 	std::cout << "FR4G-TP " << this->getName() << " va être déployé !" << std::endl;
 	return;
 }
@@ -49,15 +65,15 @@ ScavTrap::~ScavTrap(void) {
 }
 
 ScavTrap & ScavTrap::operator=(ScavTrap const & src) {
-	this->setHitPoints(src.getHitPoints());
-	this->setMaxHitPoints(src.getMaxHitPoints());
-	this->setEnergyPoints(src.getEnergyPoints());
-	this->setMaxEnergyPoints(src.getMaxEnergyPoints());
-	this->setLevel(src.getLevel());
-	this->setName(src.getName());
-	this->setMeleeAttackDamage(src.getMeleeAttackDamage());
-	this->setRangedAttackDamage(src.getRangedAttackDamage());
-	this->setArmorDamageReduction(src.getArmorDamageReduction());
+	this->_hitPoints = src.getHitPoints();
+	this->_maxHitPoints = src.getMaxHitPoints();
+	this->_energyPoints = src.getEnergyPoints();
+	this->_maxEnergyPoints = src.getMaxEnergyPoints();
+	this->_level = src.getLevel();
+	this->_name = src.getName();
+	this->_meleeAttackDamage = src.getMeleeAttackDamage();
+	this->_rangedAttackDamage = src.getRangedAttackDamage();
+	this->_armorDamageReduction = src.getArmorDamageReduction();
 	return (*this);
 }
 
@@ -72,7 +88,7 @@ void ScavTrap::challengeNewcomer(void) {
 			"je te défie de n'utiliser que l'attaque que tu aimes le moins durant toute la mission",
 			"je te défie d'utiliser chaque attaque au moins une seule fois"};
 		std::cout << "FR4G-TP " << this->getName() << ", " << challenge[rand() % 5] << " !" << std::endl;
-		this->setEnergyPoints(this->getEnergyPoints() - 25);
+		this->_energyPoints = this->getEnergyPoints() - 25;
 	}
 	return;
 }
