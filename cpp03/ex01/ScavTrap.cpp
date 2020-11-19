@@ -6,43 +6,41 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 15:59:50 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/05 08:24:17 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/19 14:11:22 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(void)
-:
-	_hitPoints(100),
-	_maxHitPoints(100),
-	_energyPoints(50),
-	_maxEnergyPoints(50),
-	_level(1),
-	_name("Default"),
-	_meleeAttackDamage(20),
-	_rangedAttackDamage(15),
-	_armorDamageReduction(3)
 {
 	srand(time(NULL));
+	this->_hitPoints = 100;
+	this->_maxHitPoints = 100;
+	this->_energyPoints = 50;
+	this->_maxEnergyPoints = 50;
+	this->_level = 1;
+	this->_name = "Default";
+	this->_meleeAttackDamage = 20;
+	this->_rangedAttackDamage = 15;
+	this->_armorDamageReduction = 3;
 	std::cout << "FR4G-TP " << this->_name << " est en préparation..." << std::endl;
 	std::cout << "FR4G-TP " << this->_name << " va être déployé !" << std::endl;
 	return;
 }
 
 ScavTrap::ScavTrap(std::string const name)
-:
-	_hitPoints(100),
-	_maxHitPoints(100),
-	_energyPoints(50),
-	_maxEnergyPoints(50),
-	_level(1),
-	_name(name),
-	_meleeAttackDamage(20),
-	_rangedAttackDamage(15),
-	_armorDamageReduction(3)
 {
 	srand(time(NULL));
+	this->_hitPoints = 100;
+	this->_maxHitPoints = 100;
+	this->_energyPoints = 50;
+	this->_maxEnergyPoints = 50;
+	this->_level = 1;
+	this->_name = name;
+	this->_meleeAttackDamage = 20;
+	this->_rangedAttackDamage = 15;
+	this->_armorDamageReduction = 3;
 	std::cout << "FR4G-TP " << this->_name << " va être déployé !" << std::endl;
 	return;
 }

@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 15:59:50 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/19 09:47:26 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/19 14:23:37 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 ScavTrap::ScavTrap(void)
 :
-	ClapTrap("Default")
+	ClapTrap()
 {
 	srand(time(NULL));
 	this->_hitPoints = 100;
 	this->_maxHitPoints = 100;
 	this->_energyPoints = 50;
 	this->_maxEnergyPoints = 50;
-	this->_level = 1;
 	this->_meleeAttackDamage = 20;
 	this->_rangedAttackDamage = 15;
 	this->_armorDamageReduction = 3;
@@ -39,7 +38,6 @@ ScavTrap::ScavTrap(std::string const name)
 	this->_maxHitPoints = 100;
 	this->_energyPoints = 50;
 	this->_maxEnergyPoints = 50;
-	this->_level = 1;
 	this->_meleeAttackDamage = 20;
 	this->_rangedAttackDamage = 15;
 	this->_armorDamageReduction = 3;

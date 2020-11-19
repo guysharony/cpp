@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 09:29:48 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/19 09:42:39 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/19 14:22:43 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ ClapTrap::ClapTrap(void)
 	_maxHitPoints(0),
 	_energyPoints(0),
 	_maxEnergyPoints(0),
-	_level(0),
-	_name(),
+	_level(1),
+	_name("Default"),
 	_meleeAttackDamage(0),
 	_rangedAttackDamage(0),
 	_armorDamageReduction(0)
@@ -35,7 +35,7 @@ ClapTrap::ClapTrap(std::string const name)
 	_maxHitPoints(0),
 	_energyPoints(0),
 	_maxEnergyPoints(0),
-	_level(0),
+	_level(1),
 	_name(name),
 	_meleeAttackDamage(0),
 	_rangedAttackDamage(0),

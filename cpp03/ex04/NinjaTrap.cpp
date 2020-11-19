@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 08:09:09 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/19 10:49:49 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/19 14:23:42 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 NinjaTrap::NinjaTrap(void)
 :
-	ClapTrap("Default")
+	ClapTrap()
 {
 	srand(time(NULL));
 	this->_hitPoints = 60;
 	this->_maxHitPoints = 60;
 	this->_energyPoints = 120;
 	this->_maxEnergyPoints = 120;
-	this->_level = 1;
 	this->_meleeAttackDamage = 60;
 	this->_rangedAttackDamage = 5;
 	this->_armorDamageReduction = 0;
@@ -39,7 +38,6 @@ NinjaTrap::NinjaTrap(std::string const name)
 	this->_maxHitPoints = 60;
 	this->_energyPoints = 120;
 	this->_maxEnergyPoints = 120;
-	this->_level = 1;
 	this->_meleeAttackDamage = 60;
 	this->_rangedAttackDamage = 5;
 	this->_armorDamageReduction = 0;

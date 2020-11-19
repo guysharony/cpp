@@ -6,43 +6,41 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:53:39 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/05 08:23:56 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/19 14:10:21 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(void)
-:
-	_hitPoints(100),
-	_maxHitPoints(100),
-	_energyPoints(100),
-	_maxEnergyPoints(100),
-	_level(1),
-	_name("Default"),
-	_meleeAttackDamage(30),
-	_rangedAttackDamage(20),
-	_armorDamageReduction(5)
 {
 	srand(time(NULL));
+	this->_hitPoints = 100;
+	this->_maxHitPoints = 100;
+	this->_energyPoints = 100;
+	this->_maxEnergyPoints = 100;
+	this->_level = 1;
+	this->_name = "Default";
+	this->_meleeAttackDamage = 30;
+	this->_rangedAttackDamage = 20;
+	this->_armorDamageReduction = 5;
 	std::cout << "FR4G-TP " << this->_name << " est en cours de préparation..." << std::endl;
 	std::cout << "FR4G-TP " << this->_name << " est prêt à être déployé !" << std::endl;
 	return;
 }
 
 FragTrap::FragTrap(std::string const name)
-:
-	_hitPoints(100),
-	_maxHitPoints(100),
-	_energyPoints(100),
-	_maxEnergyPoints(100),
-	_level(1),
-	_name(name),
-	_meleeAttackDamage(30),
-	_rangedAttackDamage(20),
-	_armorDamageReduction(5)
 {
 	srand(time(NULL));
+	this->_hitPoints = 100;
+	this->_maxHitPoints = 100;
+	this->_energyPoints = 100;
+	this->_maxEnergyPoints = 100;
+	this->_level = 1;
+	this->_name = name;
+	this->_meleeAttackDamage = 30;
+	this->_rangedAttackDamage = 20;
+	this->_armorDamageReduction = 5;
 	std::cout << "FR4G-TP " << this->_name << " est prêt à être déployé !" << std::endl;
 	return;
 }
@@ -50,7 +48,6 @@ FragTrap::FragTrap(std::string const name)
 FragTrap::FragTrap(FragTrap const & src)
 {
 	srand(time(NULL));
-	*this = src;
 	std::cout << "Déploiement de FR4G-TP " << this->_name << " !" << std::endl;
 	return;
 }
@@ -113,9 +110,14 @@ void FragTrap::vaulthunter_dot_exe(std::string const & target) {
 	if (this->_energyPoints < 25) {
 		std::cout << "FR4G-TP " << this->_name << ", vous n'avez pas assez d'énérgie pour cette attaque !" << std::endl;
 	} else {
-		std::string attack[5] = {"un épée saucisse", "le moonwalk à l'envers", "l'hypnodance", "la rondade de la mort", "un falafel des enfers"};
+		std::string attack[5] = {
+			"un épée saucisse",
+			"le moonwalk à l'envers",
+			"l'hypnodance",
+			"la rondade de la mort",
+			"un falafel des enfers"};
 		std::cout << "FR4G-TP " << this->_name << " attaque " << target << " avec " << attack[rand() % 5] << ", causant " << 25 << " points de dégâts !" << std::endl;
-		this->_energyPoints -= 25;
+		this->_energyPoints = this->_energyPoints - 25;
 	}
 	return;
 }

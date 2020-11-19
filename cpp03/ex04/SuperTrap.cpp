@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 11:15:17 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/19 10:44:21 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/19 14:01:22 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ SuperTrap::SuperTrap(std::string const name)
 	this->_maxHitPoints = FragTrap::getMaxHitPoints();
 	this->_energyPoints = NinjaTrap::getEnergyPoints();
 	this->_maxEnergyPoints = NinjaTrap::getMaxEnergyPoints();
-	this->_meleeAttackDamage = NinjaTrap::_meleeAttackDamage;
+	this->_meleeAttackDamage = NinjaTrap::getMeleeAttackDamage();
 	this->_rangedAttackDamage = FragTrap::getRangedAttackDamage();
 	this->_armorDamageReduction = FragTrap::getArmorDamageReduction();
 	return;
@@ -67,4 +67,12 @@ SuperTrap & SuperTrap::operator=(SuperTrap const & src) {
 	this->_rangedAttackDamage = src.getRangedAttackDamage();
 	this->_armorDamageReduction = src.getArmorDamageReduction();
 	return (*this);
+}
+
+void SuperTrap::rangedAttack(std::string const & target) {
+	FragTrap::rangedAttack(target);
+}
+
+void SuperTrap::meleeAttack(std::string const & target) {
+	NinjaTrap::meleeAttack(target);
 }

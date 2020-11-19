@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:53:39 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/19 10:50:29 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/19 14:23:13 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 FragTrap::FragTrap(void)
 :
-	ClapTrap("Default")
+	ClapTrap()
 {
 	srand(time(NULL));
 	this->_hitPoints = 100;
 	this->_maxHitPoints = 100;
 	this->_energyPoints = 100;
 	this->_maxEnergyPoints = 100;
-	this->_level = 1;
 	this->_meleeAttackDamage = 30;
 	this->_rangedAttackDamage = 20;
 	this->_armorDamageReduction = 5;
@@ -39,7 +38,6 @@ FragTrap::FragTrap(std::string const name)
 	this->_maxHitPoints = 100;
 	this->_energyPoints = 100;
 	this->_maxEnergyPoints = 100;
-	this->_level = 1;
 	this->_meleeAttackDamage = 30;
 	this->_rangedAttackDamage = 20;
 	this->_armorDamageReduction = 5;
