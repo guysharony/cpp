@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:53:39 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/05 08:19:47 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/11 08:56:13 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 FragTrap::FragTrap(void)
 :
-	ClapTrap(100, 100, 100, 100, 1, "Default", 30, 20, 5)
+	ClapTrap(100, 100, 100, 100, 1, "", 30, 20, 5)
 {
 	srand(time(NULL));
 	std::cout << "FR4G-TP " << this->getName() << " est en cours de préparation..." << std::endl;

@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 11:15:17 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/06 11:34:38 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/13 08:48:15 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,39 @@
 
 SuperTrap::SuperTrap(void)
 :
-	ClapTrap(100, 100, 120, 120, 1, "Default", 60, 20, 0),
-	NinjaTrap("Default"),
-	FragTrap("Default")
+	ClapTrap(),
+	FragTrap(),
+	NinjaTrap()
 {
 	srand(time(NULL));
-	std::cout << "FR4G-TP " << this->getName() << " est en préparation..." << std::endl;
-	std::cout << "FR4G-TP " << this->getName() << " va être déployé !" << std::endl;
+	this->setHitPoints(FragTrap::getHitPoints());
+	this->setMaxHitPoints(NinjaTrap::getMaxHitPoints());
+	this->setEnergyPoints(NinjaTrap::getEnergyPoints());
+	this->setMaxEnergyPoints(NinjaTrap::getMaxEnergyPoints());
+	this->setLevel(1);
+	this->setName("");
+	this->setMeleeAttackDamage(NinjaTrap::getMeleeAttackDamage());
+	this->setRangedAttackDamage(FragTrap::getRangedAttackDamage());
+	this->setArmorDamageReduction(FragTrap::getArmorDamageReduction());
 	return;
 }
 
 SuperTrap::SuperTrap(std::string const name)
 :
-	ClapTrap(100, 100, 120, 120, 1, name, 60, 20, 0),
-	NinjaTrap(name),
-	FragTrap(name)
+	ClapTrap(0, 0, 0, 0, 0, name, 0, 0, 0),
+	FragTrap(name),
+	NinjaTrap(name)
 {
 	srand(time(NULL));
-	std::cout << "FR4G-TP " << this->getName() << " va être déployé !" << std::endl;
+	this->setHitPoints(FragTrap::getHitPoints());
+	this->setMaxHitPoints(NinjaTrap::getMaxHitPoints());
+	this->setEnergyPoints(NinjaTrap::getEnergyPoints());
+	this->setMaxEnergyPoints(NinjaTrap::getMaxEnergyPoints());
+	this->setLevel(1);
+	this->setName(name);
+	this->setMeleeAttackDamage(NinjaTrap::getMeleeAttackDamage());
+	this->setRangedAttackDamage(FragTrap::getRangedAttackDamage());
+	this->setArmorDamageReduction(FragTrap::getArmorDamageReduction());
 	return;
 }
 
@@ -40,17 +55,10 @@ SuperTrap::SuperTrap(SuperTrap const & src)
 	ClapTrap(src)
 {
 	srand(time(NULL));
-	std::cout << "Lancement de FR4G-TP " << this->getName() << " !" << std::endl;
 	return;
 }
 
-SuperTrap::~SuperTrap(void) {
-	if (this->getHitPoints())
-		std::cout << "Félicitation FR4G-TP " << this->getName() << ", vous avez survécu !" << std::endl;
-	else
-		std::cout << "FR4G-TP " << this->getName() << ", je vous croyez meilleur ..." << std::endl;
-	return;
-}
+SuperTrap::~SuperTrap(void) {}
 
 SuperTrap & SuperTrap::operator=(SuperTrap const & src) {
 	this->setHitPoints(src.getHitPoints());

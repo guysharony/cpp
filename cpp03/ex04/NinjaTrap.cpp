@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 08:09:09 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/06 11:33:14 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/11 09:12:35 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 NinjaTrap::NinjaTrap(void)
 :
-	ClapTrap(60, 60, 120, 120, 1, "Default", 60, 5, 0)
+	ClapTrap(60, 60, 120, 120, 1, "", 60, 5, 0)
 {
 	srand(time(NULL));
 	std::cout << "FR4G-TP " << this->getName() << " est en préparation..." << std::endl;

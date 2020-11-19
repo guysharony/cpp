@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 15:59:50 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/05 08:21:58 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/11 08:56:20 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ScavTrap::ScavTrap(void)
 :
-	ClapTrap(100, 100, 50, 50, 1, "Default", 20, 15, 3)
+	ClapTrap(100, 100, 50, 50, 1, "", 20, 15, 3)
 {
 	srand(time(NULL));
 	std::cout << "FR4G-TP " << this->getName() << " est en préparation..." << std::endl;

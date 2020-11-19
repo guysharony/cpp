@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 09:29:50 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/05 16:02:54 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/11 09:21:27 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class ClapTrap {
 		void meleeAttack(std::string const & target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
-	
+
 		unsigned int getHitPoints(void) const;
 		unsigned int getMaxHitPoints(void) const;
 		unsigned int getEnergyPoints(void) const;
@@ -59,7 +59,7 @@ class ClapTrap {
 		void setMeleeAttackDamage(unsigned int nbr);
 		void setRangedAttackDamage(unsigned int nbr);
 		void setArmorDamageReduction(unsigned int nbr);
-
+		
 	private:
 		unsigned int _hitPoints;
 		unsigned int _maxHitPoints;
