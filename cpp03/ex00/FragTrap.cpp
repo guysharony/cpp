@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:53:39 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/24 08:16:42 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/24 10:40:21 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ FragTrap::FragTrap(std::string const name)
 FragTrap::FragTrap(FragTrap const & src)
 {
 	srand(time(NULL));
+	*this = src;
 	std::cout << "Déploiement de FR4G-TP " << this->_name << " !" << std::endl;
 	return;
 }
