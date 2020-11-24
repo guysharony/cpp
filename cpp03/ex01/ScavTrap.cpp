@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 15:59:50 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/19 14:11:22 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/24 11:20:21 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ ScavTrap::ScavTrap(void)
 	this->_meleeAttackDamage = 20;
 	this->_rangedAttackDamage = 15;
 	this->_armorDamageReduction = 3;
-	std::cout << "FR4G-TP " << this->_name << " est en préparation..." << std::endl;
-	std::cout << "FR4G-TP " << this->_name << " va être déployé !" << std::endl;
+	std::cout << "SC4V-TP " << this->_name << " est en préparation..." << std::endl;
+	std::cout << "SC4V-TP " << this->_name << " va être déployé !" << std::endl;
 	return;
 }
 
@@ -41,7 +41,7 @@ ScavTrap::ScavTrap(std::string const name)
 	this->_meleeAttackDamage = 20;
 	this->_rangedAttackDamage = 15;
 	this->_armorDamageReduction = 3;
-	std::cout << "FR4G-TP " << this->_name << " va être déployé !" << std::endl;
+	std::cout << "SC4V-TP " << this->_name << " va être déployé !" << std::endl;
 	return;
 }
 
@@ -49,15 +49,15 @@ ScavTrap::ScavTrap(ScavTrap const & src)
 {
 	srand(time(NULL));
 	*this = src;
-	std::cout << "Lancement de FR4G-TP " << this->_name << " !" << std::endl;
+	std::cout << "Lancement de SC4V-TP " << this->_name << " !" << std::endl;
 	return;
 }
 
 ScavTrap::~ScavTrap(void) {
 	if (this->_hitPoints)
-		std::cout << "Félicitation FR4G-TP " << this->_name << ", vous avez survécu !" << std::endl;
+		std::cout << "Félicitation SC4V-TP " << this->_name << ", vous avez survécu !" << std::endl;
 	else
-		std::cout << "FR4G-TP " << this->_name << ", je vous croyez meilleur ..." << std::endl;
+		std::cout << "SC4V-TP " << this->_name << ", je vous croyez meilleur ..." << std::endl;
 	return;
 }
 
@@ -75,11 +75,11 @@ ScavTrap & ScavTrap::operator=(ScavTrap const & src) {
 }
 
 void ScavTrap::rangedAttack(std::string const & target) {
-	std::cout << "FR4G-TP " << this->_name << " vient d'attaquer " << target << " à distance, provoquant " << this->_rangedAttackDamage << " points de dégâts !" << std::endl;
+	std::cout << "SC4V-TP " << this->_name << " vient d'attaquer " << target << " à distance, provoquant " << this->_rangedAttackDamage << " points de dégâts !" << std::endl;
 }
 
 void ScavTrap::meleeAttack(std::string const & target) {
-	std::cout << "FR4G-TP " << this->_name << " vient d'attaquer " << target << " en mêlée, provoquant " << this->_meleeAttackDamage << " points de dégâts !" << std::endl;
+	std::cout << "SC4V-TP " << this->_name << " vient d'attaquer " << target << " en mêlée, provoquant " << this->_meleeAttackDamage << " points de dégâts !" << std::endl;
 }
 
 void ScavTrap::takeDamage(unsigned int amount) {
@@ -88,10 +88,10 @@ void ScavTrap::takeDamage(unsigned int amount) {
 	tmp = amount - this->_armorDamageReduction;
 	if (tmp >= this->_hitPoints) {
 		this->_hitPoints = 0;
-		std::cout << "FR4G-TP " << this->_name << " est décédé à cause d'une attaque !" << std::endl;
+		std::cout << "SC4V-TP " << this->_name << " est décédé à cause d'une attaque !" << std::endl;
 	} else {
 		this->_hitPoints -= tmp;
-		std::cout << "FR4G-TP " << this->_name << " vient d'être attaqué, perdant " << amount << " points de dégâts !" << std::endl;
+		std::cout << "SC4V-TP " << this->_name << " vient d'être attaqué, perdant " << amount << " points de dégâts !" << std::endl;
 	}
 }
 
@@ -104,12 +104,12 @@ void ScavTrap::beRepaired(unsigned int amount) {
 	} else {
 		this->_hitPoints = tmp;
 	}
-	std::cout << "FR4G-TP " << this->_name << " vient d'être réparé, récupérant " << this->_hitPoints << " points de vie !" << std::endl;
+	std::cout << "SC4V-TP " << this->_name << " vient d'être réparé, récupérant " << this->_hitPoints << " points de vie !" << std::endl;
 }
 
 void ScavTrap::challengeNewcomer(void) {
 	if (this->_energyPoints < 25) {
-		std::cout << "FR4G-TP " << this->_name << ", vous n'avez pas assez d'énérgie pour un challenge !" << std::endl;
+		std::cout << "SC4V-TP " << this->_name << ", vous n'avez pas assez d'énérgie pour un challenge !" << std::endl;
 	} else {
 		std::string challenge[5] = {
 			"je te défie de vincre ton ennemi en utilisant qu'une seule attaque",
@@ -117,7 +117,7 @@ void ScavTrap::challengeNewcomer(void) {
 			"je te défie d'arriver à notre point de rendez-vous sans avoir à attaquer tes ennemis",
 			"je te défie de n'utiliser que l'attaque que tu aimes le moins durant toute la mission",
 			"je te défie d'utiliser chaque attaque au moins une seule fois"};
-		std::cout << "FR4G-TP " << this->_name << ", " << challenge[rand() % 5] << " !" << std::endl;
+		std::cout << "SC4V-TP " << this->_name << ", " << challenge[rand() % 5] << " !" << std::endl;
 		this->_energyPoints -= 25;
 	}
 	return;

@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/05 08:09:09 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/19 14:23:42 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/24 11:23:40 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ NinjaTrap::NinjaTrap(void)
 	this->_meleeAttackDamage = 60;
 	this->_rangedAttackDamage = 5;
 	this->_armorDamageReduction = 0;
-	std::cout << "FR4G-TP " << this->getName() << " est en préparation..." << std::endl;
-	std::cout << "FR4G-TP " << this->getName() << " va être déployé !" << std::endl;
+	std::cout << "NI4J-TP " << this->getName() << " est en préparation..." << std::endl;
+	std::cout << "NI4J-TP " << this->getName() << " va être déployé !" << std::endl;
 	return;
 }
 
@@ -41,7 +41,7 @@ NinjaTrap::NinjaTrap(std::string const name)
 	this->_meleeAttackDamage = 60;
 	this->_rangedAttackDamage = 5;
 	this->_armorDamageReduction = 0;
-	std::cout << "FR4G-TP " << this->getName() << " va être déployé !" << std::endl;
+	std::cout << "NI4J-TP " << this->getName() << " va être déployé !" << std::endl;
 	return;
 }
 
@@ -50,15 +50,15 @@ NinjaTrap::NinjaTrap(NinjaTrap const & src)
 	ClapTrap(src)
 {
 	srand(time(NULL));
-	std::cout << "Lancement de FR4G-TP " << this->getName() << " !" << std::endl;
+	std::cout << "Lancement de NI4J-TP " << this->getName() << " !" << std::endl;
 	return;
 }
 
 NinjaTrap::~NinjaTrap(void) {
 	if (this->getHitPoints())
-		std::cout << "Félicitation FR4G-TP " << this->getName() << ", vous avez survécu !" << std::endl;
+		std::cout << "Félicitation NI4J-TP " << this->getName() << ", vous avez survécu !" << std::endl;
 	else
-		std::cout << "FR4G-TP " << this->getName() << ", je vous croyez meilleur ..." << std::endl;
+		std::cout << "NI4J-TP " << this->getName() << ", je vous croyez meilleur ..." << std::endl;
 	return;
 }
 
@@ -76,19 +76,19 @@ NinjaTrap & NinjaTrap::operator=(NinjaTrap const & src) {
 }
 
 void	NinjaTrap::ninjaShoebox(NinjaTrap const & target) {
-	std::cout << "FR4G-TP " << this->getName() << " attaque " << target.getName() << " avec une chaussure !" << std::endl;
+	std::cout << "NI4J-TP " << this->getName() << " attaque " << target.getName() << " avec une chaussure !" << std::endl;
 }
 
 void	NinjaTrap::ninjaShoebox(ClapTrap const & target) {
-	std::cout << "FR4G-TP " << this->getName() << " attaque " << target.getName() << " avec une claquette !" << std::endl;
+	std::cout << "NI4J-TP " << this->getName() << " attaque " << target.getName() << " avec une claquette !" << std::endl;
 }
 
 void	NinjaTrap::ninjaShoebox(FragTrap const & target) {
-	std::cout << "FR4G-TP " << this->getName() << " attaque " << target.getName() << " avec une baguette !" << std::endl;
+	std::cout << "NI4J-TP " << this->getName() << " attaque " << target.getName() << " avec une baguette !" << std::endl;
 }
 
 void	NinjaTrap::ninjaShoebox(ScavTrap const & target) {
-	std::cout << "FR4G-TP " << this->getName() << " attaque " << target.getName() << " avec une attaque inconnue !" << std::endl;
+	std::cout << "NI4J-TP " << this->getName() << " attaque " << target.getName() << " avec une attaque inconnue !" << std::endl;
 }
 
 unsigned int NinjaTrap::getEnergyPoints(void) const {

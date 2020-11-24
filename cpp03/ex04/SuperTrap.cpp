@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 11:15:17 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/19 14:01:22 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/24 11:27:13 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ SuperTrap::SuperTrap(void)
 	this->_meleeAttackDamage = NinjaTrap::getMeleeAttackDamage();
 	this->_rangedAttackDamage = FragTrap::getRangedAttackDamage();
 	this->_armorDamageReduction = FragTrap::getArmorDamageReduction();
+	std::cout << "SPR-TP " << this->getName() << " va être déployé !" << std::endl;
 	return;
 }
 
@@ -43,6 +44,7 @@ SuperTrap::SuperTrap(std::string const name)
 	this->_meleeAttackDamage = NinjaTrap::getMeleeAttackDamage();
 	this->_rangedAttackDamage = FragTrap::getRangedAttackDamage();
 	this->_armorDamageReduction = FragTrap::getArmorDamageReduction();
+	std::cout << "SPR-TP " << this->getName() << " va être déployé !" << std::endl;
 	return;
 }
 
@@ -51,10 +53,17 @@ SuperTrap::SuperTrap(SuperTrap const & src)
 	ClapTrap(src)
 {
 	srand(time(NULL));
+	std::cout << "Lancement de SPR-TP " << this->getName() << " !" << std::endl;
 	return;
 }
 
-SuperTrap::~SuperTrap(void) {}
+SuperTrap::~SuperTrap(void) {
+	if (this->getHitPoints())
+		std::cout << "Félicitation SPR-TP " << this->getName() << ", vous avez survécu !" << std::endl;
+	else
+		std::cout << "SPR-TP " << this->getName() << ", je vous croyez meilleur ..." << std::endl;
+	return;
+}
 
 SuperTrap & SuperTrap::operator=(SuperTrap const & src) {
 	this->_hitPoints = src.getHitPoints();

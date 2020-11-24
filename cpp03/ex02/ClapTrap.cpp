@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 09:29:48 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/24 10:44:49 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/24 11:21:24 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ ClapTrap::ClapTrap(void)
 	_armorDamageReduction(0)
 {
 	srand(time(NULL));
-	std::cout << "[Creation d'un ClapTrap est en cours]" << std::endl;
+	std::cout << "[Creation d'un CL4P-TP est en cours]" << std::endl;
 	return;
 }
 
@@ -42,7 +42,7 @@ ClapTrap::ClapTrap(std::string const name)
 	_armorDamageReduction(0)
 {
 	srand(time(NULL));
-	std::cout << "[Creation d'un ClapTrap de nom <" << this->_name << "> est en cours]" << std::endl;
+	std::cout << "[Creation d'un CL4P-TP de nom <" << this->_name << "> est en cours]" << std::endl;
 	return;
 }
 
@@ -50,7 +50,7 @@ ClapTrap::ClapTrap(ClapTrap const & src)
 {
 	srand(time(NULL));
 	*this = src;
-	std::cout << "[Lancement du ClapTrap <" << this->_name << "> est en cours]" << std::endl;
+	std::cout << "[Lancement du CL4P-TP <" << this->_name << "> est en cours]" << std::endl;
 	return;
 }
 
@@ -112,11 +112,11 @@ unsigned int ClapTrap::getArmorDamageReduction(void) const {
 }
 
 void ClapTrap::rangedAttack(std::string const & target) {
-	std::cout << "FR4G-TP " << this->getName() << " attaque " << target << " à distance, causant " << this->getRangedAttackDamage() << " points de dégâts !" << std::endl;
+	std::cout << "CL4P-TP " << this->getName() << " attaque " << target << " à distance, causant " << this->getRangedAttackDamage() << " points de dégâts !" << std::endl;
 }
 
 void ClapTrap::meleeAttack(std::string const & target) {
-	std::cout << "FR4G-TP " << this->getName() << " attaque " << target << " en mêlée, causant " << this->getMeleeAttackDamage() << " points de dégâts !" << std::endl;
+	std::cout << "CL4P-TP " << this->getName() << " attaque " << target << " en mêlée, causant " << this->getMeleeAttackDamage() << " points de dégâts !" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
@@ -125,10 +125,10 @@ void ClapTrap::takeDamage(unsigned int amount) {
 	tmp = amount - this->getArmorDamageReduction();
 	if (tmp >= this->getHitPoints()) {
 		this->_hitPoints = 0;
-		std::cout << "FR4G-TP " << this->getName() << " a était attaqué, il est à present mort !" << std::endl;
+		std::cout << "CL4P-TP " << this->getName() << " a était attaqué, il est à present mort !" << std::endl;
 	} else {
 		this->_hitPoints = this->getHitPoints() - tmp;
-		std::cout << "FR4G-TP " << this->getName() << " a était attaqué, prennant " << amount << " points de dégâts !" << std::endl;
+		std::cout << "CL4P-TP " << this->getName() << " a était attaqué, prennant " << amount << " points de dégâts !" << std::endl;
 	}
 }
 
@@ -141,5 +141,5 @@ void ClapTrap::beRepaired(unsigned int amount) {
 	} else {
 		this->_hitPoints = tmp;
 	}
-	std::cout << "FR4G-TP " << this->getName() << " vient d'être sauvé et a " << this->getHitPoints() << " points de vie !" << std::endl;
+	std::cout << "CL4P-TP " << this->getName() << " vient d'être sauvé et a " << this->getHitPoints() << " points de vie !" << std::endl;
 }
