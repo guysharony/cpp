@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:53:47 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/04 09:20:00 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/24 10:51:48 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,19 @@ int main(void) {
 	a.vaulthunter_dot_exe("Terminator");
 	b.takeDamage(25);
 	b.meleeAttack("Human");
-	a.takeDamage(25);
+	a.takeDamage(20);
 	a.vaulthunter_dot_exe("Terminator");
 	b.takeDamage(25);
 	b.rangedAttack("Human");
-	a.takeDamage(25);
+	a.takeDamage(15);
 	a.vaulthunter_dot_exe("Terminator");
 	b.takeDamage(25);
 	b.rangedAttack("Human");
-	a.takeDamage(25);
+	a.takeDamage(15);
 	a.vaulthunter_dot_exe("Terminator");
 	b.takeDamage(25);
 	b.meleeAttack("Human");
-	a.takeDamage(25);
+	a.takeDamage(20);
 	std::cout << std::endl;
 	a.meleeAttack("Terminator");
 	b.takeDamage(30);
