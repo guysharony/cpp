@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 15:59:53 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/05 08:24:15 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/24 11:09:32 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SCAVTRAP_CLASS_HPP
 
 # include <iostream>
+# include <cstdlib>
 # include <string>
 
 class ScavTrap {

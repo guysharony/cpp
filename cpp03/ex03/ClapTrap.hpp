@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 09:29:50 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/19 14:12:04 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/24 11:09:50 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CLAPTRAP_CLASS_HPP
 
 # include <iostream>
+# include <cstdlib>
 # include <string>
 
 class ClapTrap {
