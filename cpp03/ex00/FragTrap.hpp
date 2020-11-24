@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 12:53:43 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/24 08:16:46 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/24 11:07:55 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FRAGTRAP_CLASS_HPP
 
 # include <iostream>
+# include <cstdlib>
 # include <string>
 
 class FragTrap {
