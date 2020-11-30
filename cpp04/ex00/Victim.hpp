@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 09:06:07 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/30 09:14:48 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/11/30 09:35:56 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,14 @@ class Victim {
 	public:
 		Victim(std::string const & name);
 		Victim(Victim const & src);
-		~Victim(void);
+		virtual ~Victim(void);
 
 		Victim & operator=(Victim const & rhs);
 		
-		std::string getName(void) const;
+		virtual std::string 	getName(void) const;
+		virtual void 			getPolymorphed(void) const;
 
-		void getPolymorphed(void) const;
-
-	private:
+	protected:
 		Victim(void);
 		std::string _name;
 };
