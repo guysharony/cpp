@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 07:21:38 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/02 10:53:08 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/02 11:15:36 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ class Character
 {
 	private:
 		Character(void);
-		void	_AEnable(Enemy*);
-		void	_ADisable(void);
 		
 	protected:
 		std::string	_name;

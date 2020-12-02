@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 11:46:42 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/30 11:48:00 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/02 11:24:49 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 PowerFist::PowerFist(void)
 :
-	AWeapon("Power Fist", 50, 8)
+	AWeapon("Power Fist", 8, 50)
 {
 	return;
 }

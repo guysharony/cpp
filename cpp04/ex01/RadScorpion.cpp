@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:55:49 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/01 10:58:04 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/02 11:26:46 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ RadScorpion::RadScorpion(RadScorpion const &src)
     return;
 }
 
-RadScorpion::~RadScorpion(void) {
+RadScorpion::~RadScorpion() {
     std::cout << "* SPROTCH *" << std::endl;
     return;
 }

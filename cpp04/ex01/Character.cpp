@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 07:21:34 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/02 10:52:33 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/02 11:28:20 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ Character::Character(void)
 
 Character::Character(std::string const & name) 
 :
-	_name(name)
+	_name(name),
+	_apcost(40),
+	_aweapon()
 {
 	return;
 }
@@ -47,26 +49,20 @@ void 			Character::equip(AWeapon *aweapon)
 	this->_aweapon = aweapon;
 }
 
-void			Character::_AEnable(Enemy *enemy)
-{
-	this->_apcost -= _aweapon->getAPCost();
-	std::cout << this->_name << " attaque " << enemy->getType() << " with a " << this->_aweapon->getName() << std::endl;
-	this->_aweapon->attack();
-	enemy->takeDamage(this->_aweapon->getDamage());
-}
-
-void			Character::_ADisable(void)
-{
-	std::cout << "[At least " << _aweapon->getAPCost() << " action points is required to attack]" << std::endl;
-}
-
 void 			Character::attack(Enemy *enemy)
 {
-	if (this->_aweapon || enemy)
+	if (!this->_aweapon || !enemy)
+		return;
+	if (this->_apcost >= this->_aweapon->getAPCost())
 	{
-		(this->_apcost >= _aweapon->getAPCost()) ? this->_AEnable(enemy) : this->_ADisable();
-		if (!enemy->getHP())
+		this->_apcost -= this->_aweapon->getAPCost();
+		std::cout << this->_name << " attaque " << enemy->getType() << " with a " << this->_aweapon->getName() << std::endl;
+		this->_aweapon->attack();
+		enemy->takeDamage(this->_aweapon->getDamage());
+		if (enemy->getHP() == 0)
 			delete enemy;
+	} else {
+		std::cout << "[At least " << _aweapon->getAPCost() << " action points is required to attack]" << std::endl;
 	}
 	return;
 }
@@ -86,5 +82,6 @@ AWeapon			*Character::getAWeapon() const {
 std::ostream 	&operator<<(std::ostream &a, Character const &b) {
 	a << b.getName() << " has " << b.getAPCost() << " AP and ";
 	(b.getAWeapon()) ? a << "carries a " << b.getAWeapon()->getName() : a << "is unarmed";
+	a << std::endl;
 	return (a);
 }

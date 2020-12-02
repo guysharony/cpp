@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 11:39:47 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/02 10:59:33 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/02 11:24:40 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 PlasmaRifle::PlasmaRifle(void)
 :
-	AWeapon("Plasma Rifle", 21, 5)
+	AWeapon("Plasma Rifle", 5, 21)
 {
 	return;
 }

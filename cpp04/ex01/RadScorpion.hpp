@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 10:55:22 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/01 10:56:13 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/02 11:26:36 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class RadScorpion : public Enemy {
     public:
         RadScorpion(void);
         RadScorpion(RadScorpion const &src);
-        virtual ~RadScorpion(void);
+        virtual ~RadScorpion();
 
         RadScorpion &operator=(RadScorpion const & src);
 
