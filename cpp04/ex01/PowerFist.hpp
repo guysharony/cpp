@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 11:47:33 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/30 11:47:57 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/02 11:00:19 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class PowerFist : public AWeapon
 
 		PowerFist & operator=(PowerFist const & src);
 
-		virtual void 	attack(void) const = 0;
+		virtual void 	attack(void) const;
 };
 
 #endif
