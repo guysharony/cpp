@@ -1,0 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/03 10:24:38 by gsharony          #+#    #+#             */
+/*   Updated: 2020/12/03 11:14:08 by gsharony         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef AMATERIA_CLASS_HPP
+# define AMATERIA_CLASS_HPP
+
+# include "ICharacter.hpp"
+
+class AMateria
+{
+	private:
+		AMateria(void);
+		std::string		_type;
+		unsigned int 	_xp;
+	
+	protected:
+		void				setType(std::string type);
+		void				setXP(unsigned int xp);
+
+	public:
+		AMateria(std::string const & type);
+		AMateria(AMateria const & src);
+		AMateria & operator=(AMateria const & src);
+		virtual ~AMateria();
+		
+		std::string 		const & getType() const;
+		unsigned int 		getXP() const;
+		virtual AMateria* 	clone() const = 0;
+		virtual void 		use(ICharacter& target);
+};
+
+#endif
