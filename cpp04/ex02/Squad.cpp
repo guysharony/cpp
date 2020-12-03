@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 15:16:03 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/03 09:43:13 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/03 10:20:22 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ Squad::Squad(Squad const & src)
 
 Squad::~Squad()
 {
+	this->_delUnits();
 	return;
 }
 
