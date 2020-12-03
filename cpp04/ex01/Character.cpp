@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 07:21:34 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/02 11:28:20 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/03 09:41:16 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ Character::Character(std::string const & name)
 	_apcost(40),
 	_aweapon()
 {
+	return;
+}
+
+Character::Character(Character const & src)
+{
+	*this = src;
 	return;
 }
 

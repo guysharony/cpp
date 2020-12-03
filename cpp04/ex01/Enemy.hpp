@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:16:19 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/01 10:01:36 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/03 09:42:22 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ class Enemy
     
     public:
         Enemy(int hp, std::string const & type);
+		Enemy(Enemy const & src);
+		Enemy & operator=(Enemy const & src);
         virtual ~Enemy();
-
-        Enemy & operator=(Enemy const & src);
 
         std::string const   getType(void) const;
         int                 getHP(void) const;
 
-        virtual void takeDamage(int);
+        virtual void 		takeDamage(int);
 };
 
 #endif

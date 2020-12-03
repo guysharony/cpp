@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:11:25 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/01 09:27:53 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/03 09:42:23 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ Enemy::Enemy(int hp, std::string const & type)
     _type(type)
 {
     return;
+}
+
+Enemy::Enemy(Enemy const & src)
+{
+	*this = src;
+	return;
 }
 
 Enemy::~Enemy(void)

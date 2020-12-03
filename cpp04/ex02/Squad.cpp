@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 15:16:03 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/02 16:05:37 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/03 09:43:13 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@ Squad::Squad(void)
 	_count(0),
 	_unit(NULL)
 {
+	return;
+}
+
+Squad::Squad(Squad const & src)
+{
+	*this = src;
 	return;
 }
 
