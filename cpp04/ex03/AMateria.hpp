@@ -6,13 +6,16 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 10:24:38 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/03 11:14:08 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/04 09:32:00 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AMATERIA_CLASS_HPP
 # define AMATERIA_CLASS_HPP
 
+class AMateria;
+# include <iostream>
+# include <string>
 # include "ICharacter.hpp"
 
 class AMateria

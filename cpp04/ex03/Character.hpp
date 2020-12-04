@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 10:24:44 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/03 11:40:23 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/04 09:15:45 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class Character : public ICharacter {
 	public:
 		Character(std::string name);
 		Character(Character const & src);
+		Character & operator=(Character const & src);
 		virtual ~Character();
 		
 		virtual std::string const & getName() const;
@@ -34,7 +35,12 @@ class Character : public ICharacter {
 		
 	private:
 		Character(void);
+		int							_isAMateria(int n);
 		void						_initAMateria(void);
+		void						_addAMateria(AMateria* m);
+		void						_delAMateria(int idx);
+		void						_clearAMateria(void);
+		void						_cloneAMateria(Character const & src);
 };
 
 #endif
