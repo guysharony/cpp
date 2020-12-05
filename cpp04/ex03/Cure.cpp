@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 10:24:47 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/03 11:24:35 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:53:59 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,18 @@ Cure::Cure(Cure const & src)
 	return;
 }
 
-Cure & Cure::operator=(Cure const & src)
-{
-	this->setXP(src.getXP());
-	this->setType(src.getType());
-	return (*this);
-}
-
 Cure::~Cure()
 {
 	return;
 }
 
-AMateria* 		Cure::clone() const
+Cure 			&Cure::operator=(Cure const & src)
+{
+	AMateria::operator=(src);
+	return (*this);
+}
+
+AMateria		*Cure::clone() const
 {
 	return (new Cure(*this));
 }

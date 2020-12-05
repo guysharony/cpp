@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 10:24:41 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/04 10:11:11 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:53:27 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Character::~Character()
 	return;
 }
 
-Character & 			Character::operator=(Character const & src)
+Character 				&Character::operator=(Character const & src)
 {
 	if (this->_inv[0])
 		this->_clearAMateria();

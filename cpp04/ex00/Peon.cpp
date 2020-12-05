@@ -6,13 +6,15 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 09:05:27 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/02 10:40:51 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:21:04 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Peon.hpp"
 
-Peon::Peon(void) {}
+Peon::Peon(void) {
+	return;
+}
 
 Peon::Peon(std::string const & name)
 :
@@ -36,18 +38,19 @@ Peon::~Peon(void)
 	return;
 }
 
-Peon & Peon::operator=(Peon const & src)
+Peon & 			Peon::operator=(Peon const & src)
 {
 	this->_name = src._name;
 	return (*this);
 }
 
-std::string Peon::getName(void) const {
+std::string 	Peon::getName(void) const {
 	return (this->_name);
 }
 
-void Peon::getPolymorphed(void) const {
+void 			Peon::getPolymorphed(void) const {
 	std::cout << this->_name << " was just polymorphed into a pink pony!" << std::endl;
+	return;
 }
 
 std::ostream &operator<<(std::ostream &o, Peon const &rhs) {

@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 09:11:51 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/03 10:01:25 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:44:08 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,24 +30,24 @@ TacticalMarine::~TacticalMarine()
 	return;
 }
 
-TacticalMarine & TacticalMarine::operator=(TacticalMarine const & src)
+TacticalMarine 		&TacticalMarine::operator=(TacticalMarine const & src)
 {
 	(void)src;
 	return (*this);
 }
 
-ISpaceMarine* 	TacticalMarine::clone() const
+ISpaceMarine		*TacticalMarine::clone() const
 {
 	return (new TacticalMarine(*this));
 }
 
-void 			TacticalMarine::battleCry() const
+void 				TacticalMarine::battleCry() const
 {
 	std::cout << "For the Holy PLOT !" << std::endl;
 	return;
 }
 
-void 			TacticalMarine::rangedAttack() const
+void 				TacticalMarine::rangedAttack() const
 {
 	std::cout << "* attacks with a bolter *" << std::endl;
 	return;

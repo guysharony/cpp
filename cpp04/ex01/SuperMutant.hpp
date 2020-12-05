@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:52:13 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/01 10:05:59 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:27:54 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ class SuperMutant : public Enemy {
     public:
         SuperMutant(void);
         SuperMutant(SuperMutant const &src);
-        virtual ~SuperMutant(void);
+        virtual ~SuperMutant();
 
-        SuperMutant &operator=(SuperMutant const & src);
+		SuperMutant 	&operator=(SuperMutant const & src);
 
-        virtual void takeDamage(int);
+        virtual void 	takeDamage(int);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 11:46:42 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/02 11:24:49 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:37:37 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,18 @@ PowerFist::PowerFist(PowerFist const & src)
 	return;
 }
 
-PowerFist::~PowerFist(void) {
+PowerFist::~PowerFist()
+{
 	return;
 }
 
-PowerFist & PowerFist::operator=(PowerFist const & src)
+PowerFist 	&PowerFist::operator=(PowerFist const & src)
 {
-	this->_name = src._name;
-	this->_damage = src._damage;
-	this->_apcost = src._apcost;
+	AWeapon::operator=(src);
 	return (*this);
 }
 
-void PowerFist::attack(void) const {
+void 		PowerFist::attack(void) const {
 	std::cout << "* pschhh... SBAM ! *" << std::endl;
 	return;
 }

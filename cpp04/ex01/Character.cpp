@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 07:21:34 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/03 09:41:16 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:40:43 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Character::~Character()
     return;
 }
 
-Character & 	Character::operator=(Character const & src)
+Character 		&Character::operator=(Character const & src)
 {
 	this->_name = src._name;
 	this->_apcost = src._apcost;
@@ -73,19 +73,23 @@ void 			Character::attack(Enemy *enemy)
 	return;
 }
 
-std::string 	Character::getName() const {
+std::string 	Character::getName() const
+{
 	return (this->_name);
 }
 
-int				Character::getAPCost() const {
+int				Character::getAPCost() const
+{
 	return (this->_apcost);
 }
 
-AWeapon			*Character::getAWeapon() const {
+AWeapon			*Character::getAWeapon() const
+{
 	return (this->_aweapon);
 } 
 
-std::ostream 	&operator<<(std::ostream &a, Character const &b) {
+std::ostream 	&operator<<(std::ostream &a, Character const &b)
+{
 	a << b.getName() << " has " << b.getAPCost() << " AP and ";
 	(b.getAWeapon()) ? a << "carries a " << b.getAWeapon()->getName() : a << "is unarmed";
 	a << std::endl;

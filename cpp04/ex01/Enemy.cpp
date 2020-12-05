@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:11:25 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/03 09:42:23 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:30:14 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,27 +31,31 @@ Enemy::Enemy(Enemy const & src)
 	return;
 }
 
-Enemy::~Enemy(void)
+Enemy::~Enemy()
 {
     return;
 }
 
-Enemy & Enemy::operator=(Enemy const & src)
+Enemy & 			Enemy::operator=(Enemy const & src)
 {
 	this->_hp = src._hp;
 	this->_type = src._type;
 	return (*this);
 }
 
-std::string const   Enemy::getType(void) const {
+std::string const   Enemy::getType(void) const
+{
     return (_type);
 }
 
-int                 Enemy::getHP(void) const {
+int                 Enemy::getHP(void) const
+{
     return (_hp);
 }
 
-void                Enemy::takeDamage(int damage) {
+void                Enemy::takeDamage(int damage)
+{
     if (damage < 0)
         this->_hp = (this->_hp - damage < 0) ? 0 : this->_hp - damage;
+	return;
 }

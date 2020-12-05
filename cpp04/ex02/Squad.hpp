@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 15:11:45 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/03 10:11:24 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:43:54 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ class Squad : public ISquad
 	public:
 		Squad(void);
 		Squad(Squad const & src);
-		Squad & operator=(Squad const & src);
 		virtual ~Squad();
+
+		Squad 					&operator=(Squad const & src);
 	
 		virtual int 			getCount() const;
 		virtual ISpaceMarine* 	getUnit(int) const;
@@ -29,14 +30,14 @@ class Squad : public ISquad
 		virtual int 			push(ISpaceMarine*);
 
 	protected:
-		int				_count;
-		ISpaceMarine	**_unit;
+		int						_count;
+		ISpaceMarine			**_unit;
 
 	private:
-		void 			_delUnits(void);
-		void			_setUnits(Squad const &src);
+		void 					_delUnits(void);
+		void					_setUnits(Squad const &src);
 		
-		int				_includes(ISpaceMarine *unit);
+		int						_includes(ISpaceMarine *unit);
 };
 
 #endif

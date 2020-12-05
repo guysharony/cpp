@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 15:16:03 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/03 10:20:22 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:42:43 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Squad::~Squad()
 	return;
 }
 
-Squad	&Squad::operator=(Squad const & src)
+Squad				&Squad::operator=(Squad const & src)
 {
 	this->_delUnits();
 	this->_setUnits(src);
@@ -47,6 +47,7 @@ void				Squad::_delUnits(void) {
 		delete this->_unit;
 		this->_unit = NULL;
 	}
+	return;
 }
 
 void				Squad::_setUnits(Squad const & src) {
@@ -56,6 +57,7 @@ void				Squad::_setUnits(Squad const & src) {
 		for (int i = 0; i < src._count; i++)
 			this->_unit[i] = src.getUnit(i);
 	}
+	return;
 }
 
 int					Squad::_includes(ISpaceMarine *unit) {

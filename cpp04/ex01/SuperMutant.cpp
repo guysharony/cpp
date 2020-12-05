@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:55:49 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/01 10:58:07 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:38:41 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,20 @@ SuperMutant::SuperMutant(SuperMutant const &src)
     return;
 }
 
-SuperMutant::~SuperMutant(void) {
+SuperMutant::~SuperMutant()
+{
     std::cout << "Aaargh ..." << std::endl;
     return;
 }
 
-SuperMutant &SuperMutant::operator=(SuperMutant const & src) {
-    this->_hp = src.getHP();
-    this->_type = src.getType();
+SuperMutant 	&SuperMutant::operator=(SuperMutant const & src)
+{
+    Enemy::operator=(src);
     return (*this);
 }
 
-void    SuperMutant::takeDamage(int damage) {
+void    		SuperMutant::takeDamage(int damage)
+{
     Enemy::takeDamage(damage - 3);
+	return;
 }

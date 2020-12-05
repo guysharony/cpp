@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 11:39:47 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/02 11:24:40 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:37:10 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,14 @@ PlasmaRifle::PlasmaRifle(PlasmaRifle const & src)
 	return;
 }
 
-PlasmaRifle::~PlasmaRifle(void) {
+PlasmaRifle::~PlasmaRifle()
+{
 	return;
 }
 
-PlasmaRifle & 	PlasmaRifle::operator=(PlasmaRifle const & src)
+PlasmaRifle 	&PlasmaRifle::operator=(PlasmaRifle const & src)
 {
-	this->_name = src._name;
-	this->_damage = src._damage;
-	this->_apcost = src._apcost;
+	AWeapon::operator=(src);
 	return (*this);
 }
 

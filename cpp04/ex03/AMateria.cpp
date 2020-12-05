@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 10:24:34 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/03 11:15:07 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:50:12 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,19 @@ AMateria::AMateria(AMateria const & src)
 	return;
 }
 
-AMateria & AMateria::operator=(AMateria const & src)
+AMateria::~AMateria()
+{
+	return;
+}
+
+AMateria 			&AMateria::operator=(AMateria const & src)
 {
 	this->_xp = src.getXP();
 	this->_type = src.getType();
 	return (*this);
 }
 
-AMateria::~AMateria()
-{
-	return;
-}
-
-std::string 		const & AMateria::getType() const
+std::string const 	&AMateria::getType() const
 {
 	return (this->_type);
 }
@@ -51,18 +51,6 @@ std::string 		const & AMateria::getType() const
 unsigned int 		AMateria::getXP() const
 {
 	return (this->_xp);
-}
-
-void				AMateria::setType(std::string type)
-{
-	this->_type = type;
-	return;
-}
-
-void				AMateria::setXP(unsigned int xp)
-{
-	this->_xp = xp;
-	return;
 }
 
 void 				AMateria::use(ICharacter& target)

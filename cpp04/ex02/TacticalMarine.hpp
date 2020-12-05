@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 09:11:56 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/03 10:14:05 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:44:28 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ class TacticalMarine : public ISpaceMarine {
 	public:
 		TacticalMarine(void);
 		TacticalMarine(TacticalMarine const & src);
-		TacticalMarine & operator=(TacticalMarine const & src);
 		virtual ~TacticalMarine();
+
+		TacticalMarine 			&operator=(TacticalMarine const & src);
 
 		virtual ISpaceMarine* 	clone() const;
 		virtual void 			battleCry() const;

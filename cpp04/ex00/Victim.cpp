@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 09:05:27 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/30 09:15:06 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:23:31 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 Victim::Victim(void)
 :
 	_name()
-{}
+{
+	return;
+}
 
 Victim::Victim(std::string const & name)
 :
@@ -37,18 +39,19 @@ Victim::~Victim(void)
 	return;
 }
 
-Victim & Victim::operator=(Victim const & src)
+Victim & 		Victim::operator=(Victim const & src)
 {
 	this->_name = src._name;
 	return (*this);
 }
 
-std::string Victim::getName(void) const {
+std::string 	Victim::getName(void) const {
 	return (this->_name);
 }
 
-void Victim::getPolymorphed(void) const {
+void 			Victim::getPolymorphed(void) const {
 	std::cout << this->_name << " was just polymorphed in a cute little sheep!" << std::endl;
+	return;
 }
 
 std::ostream &operator<<(std::ostream &o, Victim const &rhs) {

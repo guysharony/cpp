@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 08:43:36 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/30 09:13:28 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:22:57 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ Sorcerer::Sorcerer(void)
 :
 	_name(),
 	_title()
-{}
+{
+	return;
+}
 
 Sorcerer::Sorcerer(std::string const & name, std::string const & title)
 :
@@ -39,22 +41,22 @@ Sorcerer::~Sorcerer(void)
 	return;
 }
 
-Sorcerer & Sorcerer::operator=(Sorcerer const & src)
+Sorcerer & 		Sorcerer::operator=(Sorcerer const & src)
 {
 	this->_name = src._name;
 	this->_title = src._title;
 	return (*this);
 }
 
-std::string Sorcerer::getName(void) const {
+std::string 	Sorcerer::getName(void) const {
 	return (this->_name);
 }
 
-std::string Sorcerer::getTitle(void) const {
+std::string 	Sorcerer::getTitle(void) const {
 	return (this->_title);
 }
 
-void Sorcerer::polymorph(Victim const &v) const {
+void 			Sorcerer::polymorph(Victim const &v) const {
 	v.getPolymorphed();
 	return;
 }

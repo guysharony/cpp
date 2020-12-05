@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:55:49 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/02 11:26:46 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:39:07 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,19 @@ RadScorpion::RadScorpion(RadScorpion const &src)
     return;
 }
 
-RadScorpion::~RadScorpion() {
+RadScorpion::~RadScorpion()
+{
     std::cout << "* SPROTCH *" << std::endl;
     return;
 }
 
-RadScorpion &RadScorpion::operator=(RadScorpion const & src) {
-    this->_hp = src.getHP();
-    this->_type = src.getType();
+RadScorpion 	&RadScorpion::operator=(RadScorpion const & src)
+{
+    Enemy::operator=(src);
     return (*this);
 }
 
-void    RadScorpion::takeDamage(int damage) {
+void    		RadScorpion::takeDamage(int damage) {
     Enemy::takeDamage(damage - 3);
+	return;
 }

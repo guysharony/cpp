@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 10:24:38 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/04 09:32:00 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:50:35 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define AMATERIA_CLASS_HPP
 
 class AMateria;
+
 # include <iostream>
 # include <string>
 # include "ICharacter.hpp"
@@ -24,16 +25,13 @@ class AMateria
 		AMateria(void);
 		std::string		_type;
 		unsigned int 	_xp;
-	
-	protected:
-		void				setType(std::string type);
-		void				setXP(unsigned int xp);
 
 	public:
 		AMateria(std::string const & type);
 		AMateria(AMateria const & src);
-		AMateria & operator=(AMateria const & src);
 		virtual ~AMateria();
+
+		AMateria 			& operator=(AMateria const & src);
 		
 		std::string 		const & getType() const;
 		unsigned int 		getXP() const;

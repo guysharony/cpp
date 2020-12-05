@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:21:35 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/02 10:28:30 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:33:00 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@
 class AWeapon
 {
 	private:
+		std::string _name;
+		int			_damage;
+		int			_apcost;
 		
 	public:
 		AWeapon(void);
@@ -26,18 +29,13 @@ class AWeapon
 		AWeapon(AWeapon const & src);
 		virtual ~AWeapon();
 
-		AWeapon & operator=(AWeapon const & rhs);
+		AWeapon 			&operator=(AWeapon const & rhs);
 
 		std::string const 	getName(void) const;
 		int 				getAPCost(void) const;
 		int 				getDamage(void) const;
 
 		virtual void 		attack(void) const = 0;
-
-	protected:
-		std::string _name;
-		int			_damage;
-		int			_apcost;
 };
 
 #endif

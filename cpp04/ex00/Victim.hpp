@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 09:06:07 by gsharony          #+#    #+#             */
-/*   Updated: 2020/11/30 09:35:56 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:41:19 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Victim {
 	public:
 		Victim(std::string const & name);
 		Victim(Victim const & src);
-		virtual ~Victim(void);
+		virtual ~Victim();
 
 		Victim & operator=(Victim const & rhs);
 		
@@ -29,7 +29,7 @@ class Victim {
 
 	protected:
 		Victim(void);
-		std::string _name;
+		std::string 	_name;
 };
 
 std::ostream &operator<<(std::ostream &o, Victim const &rhs);

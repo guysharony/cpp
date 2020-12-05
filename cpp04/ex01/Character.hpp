@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 07:21:38 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/03 09:40:34 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:39:53 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,22 @@ class Character
 {
 	private:
 		Character(void);
-		
-	protected:
-		std::string	_name;
-		int			_apcost;
-		AWeapon		*_aweapon;
+		std::string			_name;
+		int					_apcost;
+		AWeapon				*_aweapon;
 
 	public:
 		Character(std::string const & name);
 		Character(Character const & src);
-		Character & operator=(Character const & src);
 		virtual ~Character();
+
+		Character 			&operator=(Character const & src);
 		
-		void recoverAP();
-		void equip(AWeapon*);
-		void attack(Enemy*);
+		void 				recoverAP();
+		void 				equip(AWeapon*);
+		void 				attack(Enemy*);
 		
-		std::string virtual getName() const;
+		std::string virtual	getName() const;
 		int					getAPCost() const;
 		AWeapon				*getAWeapon() const;
 };

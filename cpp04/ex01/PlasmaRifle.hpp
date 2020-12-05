@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:21:35 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/02 11:00:06 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:28:10 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class PlasmaRifle : public AWeapon
 		PlasmaRifle(PlasmaRifle const & src);
 		virtual ~PlasmaRifle();
 
-		PlasmaRifle & operator=(PlasmaRifle const & src);
+		PlasmaRifle 	&operator=(PlasmaRifle const & src);
 
 		virtual void 	attack(void) const;
 };

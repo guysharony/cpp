@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 10:25:09 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/04 09:58:53 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:49:51 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ class MateriaSource : public IMateriaSource
 	public:
 		MateriaSource(void);
 		MateriaSource(MateriaSource const & src);
-		MateriaSource & operator=(MateriaSource const & src);
 		virtual ~MateriaSource();
+
+		MateriaSource 		&operator=(MateriaSource const & src);
 
 		virtual void 		learnMateria(AMateria*);
 		virtual AMateria* 	createMateria(std::string const & type);

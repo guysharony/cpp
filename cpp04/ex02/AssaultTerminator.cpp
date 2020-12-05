@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 09:11:35 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/03 10:22:33 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:45:03 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,30 +30,30 @@ AssaultTerminator::~AssaultTerminator()
 	return;
 }
 
-AssaultTerminator & AssaultTerminator::operator=(AssaultTerminator const & src)
+AssaultTerminator 	&AssaultTerminator::operator=(AssaultTerminator const & src)
 {
 	(void)src;
 	return (*this);
 }
 
-ISpaceMarine* 	AssaultTerminator::clone() const
+ISpaceMarine		*AssaultTerminator::clone() const
 {
 	return (new AssaultTerminator(*this));
 }
 
-void 			AssaultTerminator::battleCry() const
+void 				AssaultTerminator::battleCry() const
 {
 	std::cout << "This code is unclean. Purify it !" << std::endl;
 	return;
 }
 
-void 			AssaultTerminator::rangedAttack() const
+void 				AssaultTerminator::rangedAttack() const
 {
 	std::cout << "* does nothing *" << std::endl;
 	return;
 }
 
-void 			AssaultTerminator::meleeAttack() const
+void 				AssaultTerminator::meleeAttack() const
 {
 	std::cout << "* attaque with chainfists *" << std::endl;
 	return;
