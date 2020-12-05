@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 10:24:41 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/05 09:53:27 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 09:57:20 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ Character 				&Character::operator=(Character const & src)
 	return (*this);
 }
 
-std::string 			const & Character::getName() const
+std::string 			const &Character::getName() const
 {
 	return (this->_name);
 }
@@ -119,4 +119,5 @@ void					Character::_cloneAMateria(Character const & src)
 {
 	for (int i = 0; i < src._indx; i++)
 		this->_inv[i] = src._inv[i]->clone();
+	return;
 }

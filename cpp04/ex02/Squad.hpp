@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 15:11:45 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/05 09:43:54 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/05 10:34:32 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ class Squad : public ISquad
 		void					_setUnits(Squad const &src);
 		
 		int						_includes(ISpaceMarine *unit);
+		ISpaceMarine			**_dupunit(void);
 };
 
 #endif
