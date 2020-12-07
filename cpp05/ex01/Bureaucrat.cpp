@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/05 10:58:19 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/07 09:49:11 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/07 09:34:38 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,6 @@ Bureaucrat::Bureaucrat(std::string const name, int grade)
 		throw Bureaucrat::GradeTooHighException();
 	if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
-	return;
-}
-
-Bureaucrat::Bureaucrat(Bureaucrat const & src)
-{
-	*this = src;
 	return;
 }
 
