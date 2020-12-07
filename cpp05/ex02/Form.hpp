@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 09:40:01 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/07 13:39:57 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/07 13:48:57 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ class Form
 		bool					getSign() const;
 
 		void					beSigned(Bureaucrat const & executor);
-
+		void					execute(Bureaucrat const & executor) const;
+		
 		class GradeTooHighException : public std::exception
 		{
 			public:
@@ -41,6 +42,12 @@ class Form
 		};
 
 		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
+		class FormNotSignedException : public std::exception
 		{
 			public:
 				virtual const char* what() const throw();
