@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 09:40:01 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/07 10:00:23 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/07 11:47:26 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,24 @@
 
 # include <iostream>
 # include <string>
+class Form;
+# include "Bureaucrat.hpp"
 
 class Form
 {
 	public:
-		Form(std::string const name, int const gradeExecute, int const gradeAssign);
+		Form(std::string const name, int const gradeExecute, int const gradeSign);
 		Form(Form const & src);
 		~Form();
 
 		Form		&operator=(Form const & src);
 
 		std::string const		getName() const;
-		int const				getGradeExecute() const;
-		int const				getGradeAssign() const;
-		bool					getAssign() const;
+		int						getGradeExecute() const;
+		int						getGradeSign() const;
+		bool					getSign() const;
+
+		void					beSigned(Bureaucrat &src);
 
 		class GradeTooHighException : public std::exception
 		{
@@ -46,8 +50,8 @@ class Form
 		Form(void);
 		std::string const		_name;
 		int	const				_gradeExecute;
-		int	const				_gradeAssign;
-		bool					_assign;
+		int	const				_gradeSign;
+		bool					_sign;
 };
 
 #endif

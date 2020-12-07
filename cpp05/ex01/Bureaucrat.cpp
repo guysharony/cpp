@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/05 10:58:19 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/07 09:34:38 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/07 11:59:57 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Bureaucrat::Bureaucrat(std::string const name, int grade)
 {
 	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
-	if (grade > 150)
+	else if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
 	return;
 }
@@ -66,14 +66,33 @@ void				Bureaucrat::downgrade(void)
 		this->_grade++;
 }
 
+void				Bureaucrat::signForm(Form &src)
+{
+	if (src.getSign())
+		std::cout << this->getName() << " cant sign " << src.getName() << " because it is already signed" << std::endl;
+	else
+	{
+		try
+		{
+			src.beSigned(*this);
+			std::cout << this->getName() << " signs " << src.getName() << std::endl;
+		}
+		catch(const std::exception& e)
+		{
+			std::cout << this->getName() << " cant sign " << src.getName() << " because " << e.what() << std::endl;
+		}
+	}
+	return;
+}
+
 const char			*Bureaucrat::GradeTooHighException::what() const throw()
 {
-	return ("This grade is too high.");
+	return ("the grade is too high");
 }
 
 const char			*Bureaucrat::GradeTooLowException::what() const throw()
 {
-	return ("This grade is too low.");
+	return ("the grade is too low");
 }
 
 std::ostream 		&operator<<(std::ostream &o, Bureaucrat const & rhs)

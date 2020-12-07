@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/05 10:58:16 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/07 09:36:13 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/07 11:33:35 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include <string>
+class Bureaucrat;
+# include "Form.hpp"
 
 class Bureaucrat
 {		
@@ -30,6 +32,8 @@ class Bureaucrat
 
 		void					upgrade(void);
 		void					downgrade(void);
+
+		void					signForm(Form &src);
 
 		class GradeTooHighException : public std::exception
 		{
