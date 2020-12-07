@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/05 10:58:22 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/07 12:02:50 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/07 14:50:34 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,6 @@ int		main(void)
 		std::cout << a.getName() << " cant upgrade because " << e.what() << std::endl;
 	}
 	a.signForm(b);
+	std::cout << std::endl;
 	return (0);
 }

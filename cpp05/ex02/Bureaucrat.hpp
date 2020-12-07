@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/05 10:58:16 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/07 14:38:32 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/07 14:50:37 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class Bureaucrat
 
 		void					signForm(Form & form);
 		void					executeForm(Form const & form);
+		
 		class GradeTooHighException : public std::exception
 		{
 			public:
