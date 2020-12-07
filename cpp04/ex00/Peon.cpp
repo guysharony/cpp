@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 09:05:27 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/05 09:21:04 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/07 08:34:29 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Peon::Peon(Peon const & src)
 	return;
 }
 
-Peon::~Peon(void)
+Peon::~Peon()
 {
 	std::cout << "Bleuark..." << std::endl;
 	return;

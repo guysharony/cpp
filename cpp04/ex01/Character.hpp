@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 07:21:38 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/05 09:39:53 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/07 08:44:14 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Character
 	public:
 		Character(std::string const & name);
 		Character(Character const & src);
-		virtual ~Character();
+		~Character();
 
 		Character 			&operator=(Character const & src);
 		

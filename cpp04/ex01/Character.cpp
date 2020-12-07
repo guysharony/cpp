@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 07:21:34 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/05 09:40:43 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/07 08:46:48 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,18 +57,22 @@ void 			Character::equip(AWeapon *aweapon)
 
 void 			Character::attack(Enemy *enemy)
 {
-	if (!this->_aweapon || !enemy)
-		return;
-	if (this->_apcost >= this->_aweapon->getAPCost())
+	if (this->_aweapon && enemy)
 	{
-		this->_apcost -= this->_aweapon->getAPCost();
-		std::cout << this->_name << " attaque " << enemy->getType() << " with a " << this->_aweapon->getName() << std::endl;
-		this->_aweapon->attack();
-		enemy->takeDamage(this->_aweapon->getDamage());
-		if (enemy->getHP() == 0)
-			delete enemy;
-	} else {
-		std::cout << "[At least " << _aweapon->getAPCost() << " action points is required to attack]" << std::endl;
+		if (this->_apcost >= this->_aweapon->getAPCost())
+		{
+			this->_apcost -= this->_aweapon->getAPCost();
+
+			std::cout << this->_name << " attaque " << enemy->getType() << " with a " << this->_aweapon->getName() << std::endl;
+
+			this->_aweapon->attack();
+			enemy->takeDamage(this->_aweapon->getDamage());
+			
+			if (enemy->getHP() <= 0)
+				delete enemy;
+		} else {
+			std::cout << "[At least " << _aweapon->getAPCost() << " action points is required to attack]" << std::endl;
+		}
 	}
 	return;
 }
@@ -86,7 +90,7 @@ int				Character::getAPCost() const
 AWeapon			*Character::getAWeapon() const
 {
 	return (this->_aweapon);
-} 
+}
 
 std::ostream 	&operator<<(std::ostream &a, Character const &b)
 {

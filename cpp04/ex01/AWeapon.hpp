@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 10:21:35 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/05 09:33:00 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/07 08:36:13 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,13 @@ class AWeapon
 		AWeapon(AWeapon const & src);
 		virtual ~AWeapon();
 
-		AWeapon 			&operator=(AWeapon const & rhs);
+		AWeapon 			&operator=(AWeapon const & src);
 
-		std::string const 	getName(void) const;
-		int 				getAPCost(void) const;
-		int 				getDamage(void) const;
+		std::string const 	getName() const;
+		int 				getAPCost() const;
+		int 				getDamage() const;
 
-		virtual void 		attack(void) const = 0;
+		virtual void 		attack() const = 0;
 };
 
 #endif

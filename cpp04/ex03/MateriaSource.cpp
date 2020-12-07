@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 10:25:06 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/05 09:49:40 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/07 08:33:27 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,10 @@ MateriaSource 		&MateriaSource::operator=(MateriaSource const & src)
 {
 	if (this->_inv[0])
 		this->_clearAMateria();
-	if (src._inv[0])
+	if (src._inv[0]) { 
 		this->_cloneAMateria(src);
-	this->_indx = src._indx;
+		this->_indx = src._indx;
+	}
 	return (*this);
 }
 
