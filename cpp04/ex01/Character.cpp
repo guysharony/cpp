@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 07:21:34 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/07 08:46:48 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/07 09:03:21 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,9 @@ void 			Character::attack(Enemy *enemy)
 		if (this->_apcost >= this->_aweapon->getAPCost())
 		{
 			this->_apcost -= this->_aweapon->getAPCost();
-
 			std::cout << this->_name << " attaque " << enemy->getType() << " with a " << this->_aweapon->getName() << std::endl;
-
 			this->_aweapon->attack();
 			enemy->takeDamage(this->_aweapon->getDamage());
-			
 			if (enemy->getHP() <= 0)
 				delete enemy;
 		} else {

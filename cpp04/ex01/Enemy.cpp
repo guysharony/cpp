@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/01 09:11:25 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/05 09:30:14 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/07 09:02:10 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int                 Enemy::getHP(void) const
 
 void                Enemy::takeDamage(int damage)
 {
-    if (damage < 0)
+    if (damage > 0)
         this->_hp = (this->_hp - damage < 0) ? 0 : this->_hp - damage;
 	return;
 }
