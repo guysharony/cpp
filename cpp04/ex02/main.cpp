@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 09:11:45 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/05 10:16:24 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/08 15:35:45 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,19 @@ int	main(void)
 	}
 	delete vlc;
 
+	std::cout << std::endl;
+	TacticalMarine*	roger = new TacticalMarine();
+	ISpaceMarine*	human = new TacticalMarine(*roger);
+
+	ISquad* 		vlc2 = new Squad;
+	vlc2->push(human);
+
+	std::cout << std::endl;
+	ISpaceMarine* cur2 = vlc2->getUnit(0);
+	cur2->battleCry();
+	std::cout << std::endl;
+	delete roger;
+	
+	delete vlc2;
 	return (0);
 }

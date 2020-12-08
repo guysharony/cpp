@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 15:16:03 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/05 10:35:12 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/08 15:21:54 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void				Squad::_setUnits(Squad const & src)
 	if (src._unit) {
 		this->_unit = new ISpaceMarine*[src._count];
 		for (int i = 0; i < src._count; i++)
-			this->_unit[i] = src.getUnit(i);
+			this->_unit[i] = src.getUnit(i)->clone();
 	}
 	return;
 }
@@ -101,6 +101,6 @@ ISpaceMarine		**Squad::_dupunit(void)
 {
 	ISpaceMarine	**tmp = new ISpaceMarine*[this->_count + 1];
 	for (int i = 0; i < this->_count; i++)
-		tmp[i] = this->_unit[i];
+		tmp[i] = this->_unit[i]->clone();
 	return (tmp);
 }
