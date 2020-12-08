@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 14:01:17 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/08 09:39:18 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/08 10:02:45 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ RobotomyRequestForm			&RobotomyRequestForm::operator=(RobotomyRequestForm const 
 void						RobotomyRequestForm::executeForm(Bureaucrat const & executor) const
 {
 	std::cout << "Vzzzzzzzz... Vzzzzzzzz... Vzzzzzzzz..." << std::endl;
-	Form::execute(executor);
+	this->getFormExpt(executor);
 	std::cout << this->getName() << " was successfully robotomized." << std::endl;
 	return;
 }
