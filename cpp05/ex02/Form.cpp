@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 09:39:58 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/07 13:51:54 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/08 09:50:14 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,12 +87,24 @@ void					Form::beSigned(Bureaucrat const & executor)
 	return;
 }
 
-void					Form::execute(Bureaucrat const & executor) const
+void					Form::executeForm(Bureaucrat const & executor) const
+{
+	(void)executor;
+	return;
+}
+
+void					Form::getFormExpt(Bureaucrat const & executor) const
 {
 	if (!this->getSign())
 		throw Form::FormNotSignedException();
-	if (this->getGradeExecute() > executor.getGrade())
+	if (this->getGradeExecute() < executor.getGrade())
 		throw Form::GradeTooLowException();
+}
+
+void					Form::execute(Bureaucrat const & executor) const
+{
+	this->getFormExpt(executor);
+	this->executeForm(executor);
 	return;
 }
 

@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 13:26:04 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/07 14:00:08 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/08 09:39:13 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 PresidentialPardonForm::PresidentialPardonForm(void)
 :
-	Form("PresidentialPardonForm", 25, 5)
+	Form("PresidentialPardonForm", 5, 25)
 {
 	return;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string name)
 :
-	Form(name, 25, 5)
+	Form(name, 5, 25)
 {
 	return;
 }
@@ -44,7 +44,7 @@ PresidentialPardonForm		&PresidentialPardonForm::operator=(PresidentialPardonFor
 	return (*this);
 }
 
-void						PresidentialPardonForm::executeForm(Bureaucrat const & executor)
+void						PresidentialPardonForm::executeForm(Bureaucrat const & executor) const
 {
 	Form::execute(executor);
 	std::cout << this->getName() << " was forgiven by Zafod Beeblebrox." << std::endl;

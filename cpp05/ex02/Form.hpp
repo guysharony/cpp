@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 09:40:01 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/07 13:48:57 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/08 09:50:09 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,12 @@ class Form
 				virtual const char* what() const throw();
 		};
 
+	protected:
+		void					getFormExpt(Bureaucrat const & executor) const;
+		
 	private:
 		Form(void);
+		virtual	void			executeForm(Bureaucrat const & executor) const;
 		std::string const		_name;
 		int	const				_gradeExecute;
 		int	const				_gradeSign;

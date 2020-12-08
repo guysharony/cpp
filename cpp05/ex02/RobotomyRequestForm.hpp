@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 14:01:14 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/07 14:02:24 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/08 09:39:03 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class RobotomyRequestForm : public Form
 
 		RobotomyRequestForm 		&operator=(RobotomyRequestForm const & src);
 
-		void						executeForm(Bureaucrat const & executor);
+		void						executeForm(Bureaucrat const & executor) const;
 };
 
 #endif

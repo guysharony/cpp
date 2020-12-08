@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 13:23:04 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/07 13:53:35 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/08 09:39:05 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class PresidentialPardonForm : public Form
 
 		PresidentialPardonForm 		&operator=(PresidentialPardonForm const & src);
 
-		void						executeForm(Bureaucrat const & executor);
+		void						executeForm(Bureaucrat const & executor) const;
 };
 
 #endif

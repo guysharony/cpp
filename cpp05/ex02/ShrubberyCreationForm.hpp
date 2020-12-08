@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 14:01:22 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/07 14:28:46 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/08 09:38:58 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class ShrubberyCreationForm : public Form
 
 		ShrubberyCreationForm 		&operator=(ShrubberyCreationForm const & src);
 
-		void						executeForm(Bureaucrat const & executor);
+		virtual void				executeForm(Bureaucrat const & executor) const;
 };
 
 #endif

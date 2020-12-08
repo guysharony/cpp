@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 14:01:17 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/07 14:15:19 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/08 09:39:18 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 RobotomyRequestForm::RobotomyRequestForm(void)
 :
-	Form("RobotomyRequestForm", 72, 45)
+	Form("RobotomyRequestForm", 45, 72)
 {
 	return;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string name)
 :
-	Form(name, 72, 45)
+	Form(name, 45, 72)
 {
 	return;
 }
@@ -44,7 +44,7 @@ RobotomyRequestForm			&RobotomyRequestForm::operator=(RobotomyRequestForm const 
 	return (*this);
 }
 
-void						RobotomyRequestForm::executeForm(Bureaucrat const & executor)
+void						RobotomyRequestForm::executeForm(Bureaucrat const & executor) const
 {
 	std::cout << "Vzzzzzzzz... Vzzzzzzzz... Vzzzzzzzz..." << std::endl;
 	Form::execute(executor);
