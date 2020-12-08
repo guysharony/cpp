@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 09:05:27 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/05 09:23:31 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/08 14:17:17 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ Victim::Victim(Victim const & src)
 	return;
 }
 
-Victim::~Victim(void)
+Victim::~Victim()
 {
 	std::cout << "The victim " << this->_name << " died for no apparent reasons!" << std::endl;
 	return;
