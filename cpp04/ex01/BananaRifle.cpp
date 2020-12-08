@@ -1,43 +1,43 @@
-/* ************************************************************************** */
+﻿/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PlasmaRifle.cpp                                    :+:      :+:    :+:   */
+/*   BananaRifle.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/30 11:39:47 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/08 14:37:01 by gsharony         ###   ########.fr       */
+/*   Created: 2020/12/08 14:34:26 by gsharony          #+#    #+#             */
+/*   Updated: 2020/12/08 14:36:57 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PlasmaRifle.hpp"
+#include "BananaRifle.hpp"
 
-PlasmaRifle::PlasmaRifle(void)
+BananaRifle::BananaRifle(void)
 :
-	AWeapon("Plasma Rifle", 5, 21)
+	AWeapon("Banana Rifle", 8, 19)
 {
 	return;
 }
 
-PlasmaRifle::PlasmaRifle(PlasmaRifle const & src)
+BananaRifle::BananaRifle(BananaRifle const & src)
 :
 	AWeapon(src)
 {
 	return;
 }
 
-PlasmaRifle::~PlasmaRifle()
+BananaRifle::~BananaRifle()
 {
 	return;
 }
 
-PlasmaRifle 	&PlasmaRifle::operator=(PlasmaRifle const & src)
+BananaRifle 	&BananaRifle::operator=(BananaRifle const & src)
 {
 	AWeapon::operator=(src);
 	return (*this);
 }
 
-void 			PlasmaRifle::attack(void) const {
-	std::cout << "* piouuu piouuu piouuu *" << std::endl;
+void 			BananaRifle::attack(void) const {
+	std::cout << "* Floup Floup Floup *" << std::endl;
 	return;
 }

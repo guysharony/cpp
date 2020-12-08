@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 07:21:34 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/07 09:03:21 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/08 15:03:45 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,37 +59,38 @@ void 			Character::attack(Enemy *enemy)
 {
 	if (this->_aweapon && enemy)
 	{
-		if (this->_apcost >= this->_aweapon->getAPCost())
-		{
+		if (enemy->getHP() <= 0)
+			std::cout << "[Enemy is already dead]" << std::endl;
+		else if (this->_apcost < this->_aweapon->getAPCost())
+			std::cout << "[At least " << _aweapon->getAPCost() << " action points is required to attack]" << std::endl;
+		else {
 			this->_apcost -= this->_aweapon->getAPCost();
 			std::cout << this->_name << " attaque " << enemy->getType() << " with a " << this->_aweapon->getName() << std::endl;
 			this->_aweapon->attack();
 			enemy->takeDamage(this->_aweapon->getDamage());
 			if (enemy->getHP() <= 0)
 				delete enemy;
-		} else {
-			std::cout << "[At least " << _aweapon->getAPCost() << " action points is required to attack]" << std::endl;
 		}
 	}
 	return;
 }
 
-std::string 	Character::getName() const
+std::string const	Character::getName() const
 {
 	return (this->_name);
 }
 
-int				Character::getAPCost() const
+int					Character::getAPCost() const
 {
 	return (this->_apcost);
 }
 
-AWeapon			*Character::getAWeapon() const
+AWeapon				*Character::getAWeapon() const
 {
 	return (this->_aweapon);
 }
 
-std::ostream 	&operator<<(std::ostream &a, Character const &b)
+std::ostream 		&operator<<(std::ostream &a, Character const &b)
 {
 	a << b.getName() << " has " << b.getAPCost() << " AP and ";
 	(b.getAWeapon()) ? a << "carries a " << b.getAWeapon()->getName() : a << "is unarmed";

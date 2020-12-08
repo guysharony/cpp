@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 07:21:38 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/07 08:55:25 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/08 14:24:56 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class Character
 		void 				equip(AWeapon*);
 		void 				attack(Enemy*);
 		
-		std::string virtual	getName() const;
+		std::string const	getName() const;
 		int					getAPCost() const;
 		AWeapon				*getAWeapon() const;
 };

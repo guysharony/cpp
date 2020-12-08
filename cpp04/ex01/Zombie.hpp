@@ -1,27 +1,27 @@
-/* ************************************************************************** */
+﻿/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RadScorpion.hpp                                    :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/01 10:55:22 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/08 14:24:10 by gsharony         ###   ########.fr       */
+/*   Created: 2020/12/08 14:37:41 by gsharony          #+#    #+#             */
+/*   Updated: 2020/12/08 14:39:45 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RADSCORPION_CLASS_HPP
-# define RADSCORPION_CLASS_HPP
+#ifndef ZOMBIE_CLASS_HPP
+# define ZOMBIE_CLASS_HPP
 
 # include "Enemy.hpp"
 
-class RadScorpion : public Enemy {
+class Zombie : public Enemy {
     public:
-        RadScorpion(void);
-        RadScorpion(RadScorpion const &src);
-        virtual ~RadScorpion();
+        Zombie(void);
+        Zombie(Zombie const &src);
+        virtual ~Zombie();
 
-		RadScorpion 	&operator=(RadScorpion const & src);
+		Zombie	&operator=(Zombie const & src);
 };
 
 #endif
