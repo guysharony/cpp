@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/05 10:58:22 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/08 10:01:43 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/08 10:33:14 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,5 +178,8 @@ int		main(void)
 	} catch (const std::exception& e) {
 		std::cout << a.getName() << " cant execute form because " << e.what() << std::endl;
 	}
+	delete b;
+	delete c;
+	delete d;
 	return (0);
 }
