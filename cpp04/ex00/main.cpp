@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 09:17:32 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/08 14:21:04 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/09 11:32:32 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ int	main(void)
 	std::cout << std::endl;
 	std::cout << robert << edouard << jim << joe << homme << bob;
 
-	robert.operator=(edouard);
-	bob.operator=(homme);
+	robert = edouard;
+	bob = homme;
 
 	std::cout << std::endl;
 	std::cout << robert << edouard << jim << joe << homme << bob;
