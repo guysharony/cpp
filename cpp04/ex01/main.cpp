@@ -46,11 +46,6 @@ int main()
 	moi->equip(br);
 	std::cout << *moi;
 	moi->attack(b);
-
-	std::cout << std::endl;
-	moi->equip(pr);
-	std::cout << *moi;
-	moi->attack(b);
 	
 	std::cout << std::endl;
 	Enemy*		z = new Zombie();
@@ -73,5 +68,11 @@ int main()
 	moi->equip(pf);
 	std::cout << *moi;
 	moi->attack(s);
+
+	delete moi;
+	delete br;
+	delete pr;
+	delete pf;
+	delete s;
 	return (0);
 }

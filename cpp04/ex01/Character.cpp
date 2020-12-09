@@ -68,8 +68,9 @@ void 			Character::attack(Enemy *enemy)
 			std::cout << this->_name << " attaque " << enemy->getType() << " with a " << this->_aweapon->getName() << std::endl;
 			this->_aweapon->attack();
 			enemy->takeDamage(this->_aweapon->getDamage());
-			if (enemy->getHP() <= 0)
+			if (enemy->getHP() <= 0) {
 				delete enemy;
+			}
 		}
 	}
 	return;
