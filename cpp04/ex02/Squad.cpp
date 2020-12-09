@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 15:16:03 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/09 13:45:11 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/09 14:24:22 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int					Squad::push(ISpaceMarine *unit)
 		if (!this->_includes(unit)) 
 		{
 			ISpaceMarine	**tmp = this->_dupunit();
-			delete [] this->_unit;
+			this->_delUnits();
 			tmp[this->_count] = unit;
 			this->_unit = tmp;
 			this->_count++;
