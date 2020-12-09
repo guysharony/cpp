@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 10:24:41 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/05 09:57:20 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/09 14:41:48 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void 					Character::use(int idx, ICharacter& target)
 
 void					Character::_initAMateria(void)
 {
+	this->_inv = new AMateria*[4];
 	for (int i = 0; i < 4; i++)
 		this->_inv[i] = NULL;
 	return;

@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 10:25:06 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/07 08:33:27 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/09 14:42:02 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ AMateria* 			MateriaSource::createMateria(std::string const & type)
 
 void				MateriaSource::_initAMateria(void)
 {
+	this->_inv = new AMateria*[4];
 	for (int i = 0; i < 4; i++)
 		this->_inv[i] = NULL;
 	return;

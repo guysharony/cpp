@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 10:24:44 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/05 09:47:49 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/09 14:40:59 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Character : public ICharacter {
 	protected:
 		std::string 				_name;
 		int							_indx;
-		AMateria					*_inv[4];
+		AMateria					**_inv;
 		
 	private:
 		Character(void);

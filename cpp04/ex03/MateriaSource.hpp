@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 10:25:09 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/05 09:49:51 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/09 14:41:06 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class MateriaSource : public IMateriaSource
 
 	protected:
 		int					_indx;
-		AMateria			*_inv[4];
+		AMateria			**_inv;
 
 	private:
 		int					_isAMateria(int n);
