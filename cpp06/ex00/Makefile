@@ -6,7 +6,7 @@
 #    By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/09 15:15:46 by gsharony          #+#    #+#              #
-#    Updated: 2020/12/09 15:15:52 by gsharony         ###   ########.fr        #
+#    Updated: 2020/12/09 15:28:48 by gsharony         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ FILES		= main.cpp Convert.cpp
 
 OBJS		= ${FILES:.cpp=.o}
 
-EXE			= test
+EXE			= convert
 
 all:		${EXE}
 

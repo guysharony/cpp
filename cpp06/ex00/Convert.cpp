@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:01:36 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/09 15:19:06 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/09 15:21:28 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ Convert					&Convert::operator=(Convert const & src)
 	return (*this);
 }
 
-std::string const		Convert::getInput(void) const
+std::string				Convert::getInput(void) const
 {
 	return (this->_input);
 }
