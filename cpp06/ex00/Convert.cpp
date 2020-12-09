@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:01:36 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/09 15:11:36 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/09 15:19:06 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,18 @@ Convert::~Convert()
 	return;
 }
 
-/*Convert				&Convert::operator=(Convert const & src)
+Convert					&Convert::operator=(Convert const & src)
 {
 	this->_input = src.getInput();
 	return (*this);
-}*/
+}
 
-/*std::string	const	Convert::getInput(void) const
+std::string const		Convert::getInput(void) const
 {
 	return (this->_input);
 }
 
-void				Convert::setInput(std::string const & input)
+void					Convert::setInput(std::string const & input)
 {
 	this->_input = input;
-}*/
+}
