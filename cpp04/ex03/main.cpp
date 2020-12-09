@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/03 10:25:04 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/09 08:47:26 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/09 15:01:31 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,13 @@ int main()
 	ICharacter* moi = new Character("moi");
 
 	std::cout << "<Moi> has Ice & Cure:" << std::endl;
-	AMateria* tmp;
-	tmp = src->createMateria("ice");
-	moi->equip(tmp);
-	tmp = src->createMateria("cure");
-	moi->equip(tmp);
+	AMateria* tmp1;
+	tmp1 = src->createMateria("ice");
+	moi->equip(tmp1);
+
+	AMateria* tmp2;
+	tmp2 = src->createMateria("cure");
+	moi->equip(tmp2);
 
 	ICharacter* bob = new Character("bob");
 
@@ -51,6 +53,7 @@ int main()
 	delete bob;
 	delete moi;
 	delete src;
-	
+	delete tmp1;
+	delete tmp2;
 	return 0;
 }
