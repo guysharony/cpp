@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:02:07 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/10 12:12:13 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/10 12:18:42 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class Convert
 		
 		std::string			getChar(void);
 		std::string			getInt(void);
+		std::string			getFloat(void);
 		
 	private:
 		Convert(void);

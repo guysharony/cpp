@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:01:36 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/10 12:15:14 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/10 12:18:47 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,13 @@ std::string				Convert::getInt(void)
 		tmp << "impossible";
 	else
 		tmp << c;
+	return (tmp.str());
+}
+
+std::string				Convert::getFloat(void)
+{
+	std::ostringstream	tmp;
+
+	tmp << this->_input;
 	return (tmp.str());
 }
