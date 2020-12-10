@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:02:07 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/10 10:21:50 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/10 12:12:13 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class Convert
 		void				setInput(std::string const & input);
 		
 		std::string			getChar(void);
+		std::string			getInt(void);
 		
 	private:
 		Convert(void);

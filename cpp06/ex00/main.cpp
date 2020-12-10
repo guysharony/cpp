@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:00:45 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/10 10:26:20 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/10 12:13:54 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int		main(int argc, char **argv)
 		Convert			c(str);
 
 		std::cout << "char: " << c.getChar() << std::endl;
+		std::cout << "int: " << c.getInt() << std::endl;
 	}
 	return (0);
 }

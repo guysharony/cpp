@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:01:36 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/10 12:09:14 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/10 12:13:35 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,18 @@ std::string				Convert::getChar(void)
 		tmp << "impossible";
 	else if (c < 32 || c > 126)
 		tmp << "Non displayable";
+	else
+		tmp << "'" << c << "'";
+	return (tmp.str());
+}
+
+std::string				Convert::getInt(void)
+{
+	std::ostringstream	tmp;
+	int 				c = static_cast<int>(this->_input);
+	
+	if (this->_input != this->_input)
+		tmp << "impossible";
 	else
 		tmp << "'" << c << "'";
 	return (tmp.str());
