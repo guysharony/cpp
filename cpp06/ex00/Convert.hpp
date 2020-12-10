@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:02:07 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/10 09:40:50 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/10 10:21:50 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,20 @@
 class Convert
 {
 	public:
-		Convert(void);
 		Convert(std::string const & input);
 		Convert(Convert const & src);
 		~Convert();
 
 		Convert				&operator=(Convert const & src);
 
-		std::string			getInput(void) const;
+		float				getInput(void) const;
 		void				setInput(std::string const & input);
 		
-		void				_init(std::string const & input);
+		std::string			getChar(void);
 		
 	private:
-		std::string 		_input;
+		Convert(void);
+		float 				_input;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:01:36 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/10 10:07:07 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/10 10:25:47 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,15 @@
 
 Convert::Convert(void)
 :
-	_input(NULL)
+	_input(0)
 {
 	return;
 }
 
 Convert::Convert(std::string const & input)
 :
-	_input(input)
+	_input(std::stof(input))
 {
-	this->_init(input);
 	return;
 }
 
@@ -44,32 +43,26 @@ Convert					&Convert::operator=(Convert const & src)
 	return (*this);
 }
 
-std::string				Convert::getInput(void) const
+float					Convert::getInput(void) const
 {
 	return (this->_input);
 }
 
 void					Convert::setInput(std::string const & input)
 {
-	this->_input = input;
+	this->_input = std::stof(input);
 }
 
-void					Convert::_init(std::string const & input)
+std::string				Convert::getChar(void)
 {
-	float				tmp;
-
-	if (input.length() == 3 && input[0] == '\'' && input[2] == '\'')
-		tmp = static_cast<float>(input[1]);
-	else
-		tmp = std::stof(input);
-
-	char 				c = static_cast<char>(tmp);
+	std::ostringstream	tmp;
+	char 				c = static_cast<char>(this->_input);
 	
-	std::cout << "char: ";
-	if (tmp != tmp)
-		std::cout << "impossible" << std::endl;
+	if (this->_input != this->_input)
+		tmp << "impossible";
 	else if (c < 32 || c > 126)
-		std::cout << "Non displayable" << std::endl;
+		tmp << "Non displayable";
 	else
-		std::cout << '\'' << c << '\'' << std::endl;
+		tmp << "'" << c << "'";
+	return (tmp.str());
 }
