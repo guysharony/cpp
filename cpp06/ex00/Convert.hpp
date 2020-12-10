@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:02:07 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/10 14:21:48 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/10 21:37:17 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@
 class Convert
 {
 	public:
-		Convert(std::string const & input);
+		Convert(char *input);
 		Convert(Convert const & src);
 		~Convert();
 
 		Convert				&operator=(Convert const & src);
 
-		void				setInput(std::string const & input);
+		void				setInput(char *input);
 		
 		char				getChar(void);
 		int					getInt(void);
@@ -49,7 +49,7 @@ class Convert
 		
 	private:
 		Convert(void);
-		float 				_input;
+		double 				_input;
 };
 
 #endif

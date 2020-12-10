@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:00:45 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/10 21:24:52 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/10 21:39:48 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ int		main(int argc, char **argv)
 {
 	if (argc == 2)
 	{	
-		std::string 	str(argv[1]);
-		Convert			c(str);
+		Convert			c(argv[1]);
 
 		std::cout << "char: ";
 		try {
-			std::cout << "'" << c.getChar() << "'" << std::endl;
+			char tmp = c.getChar();
+			std::cout << "'" << tmp << "'" << std::endl;
 		} catch(const std::exception& e) {
 			std::cout << e.what() << std::endl;
 		}

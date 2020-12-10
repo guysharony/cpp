@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:01:36 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/10 14:21:49 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/10 21:38:00 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,16 @@ Convert::Convert(void)
 	return;
 }
 
-Convert::Convert(std::string const & input)
+Convert::Convert(char *input)
 {
-	if (input.length() == 1 && !isdigit(input[0]))
-		this->_input = static_cast<float>(input[0]);
-	else
-		this->_input = std::stof(input);
+	std::string	tmp;
+
+	tmp = input;
+	if (tmp.length() == 1 && !isdigit(input[0]))
+		this->_input = static_cast<double>(input[0]);
+	else {
+		this->_input = atof(input);
+	}
 	return;
 }
 
@@ -45,12 +49,16 @@ Convert					&Convert::operator=(Convert const & src)
 	return (*this);
 }
 
-void					Convert::setInput(std::string const & input)
+void					Convert::setInput(char *input)
 {
-	if (input.length() == 1 && !isdigit(input[0]))
-		this->_input = static_cast<float>(input[0]);
-	else
-		this->_input = std::stof(input);
+	std::string	tmp;
+
+	tmp = input;
+	if (tmp.length() == 1 && !isdigit(input[0]))
+		this->_input = static_cast<double>(input[0]);
+	else {
+		this->_input = atof(input);
+	}
 }
 
 char					Convert::getChar(void)
@@ -75,12 +83,12 @@ int						Convert::getInt(void)
 
 float					Convert::getFloat(void) const
 {
-	return (this->_input);
+	return (static_cast<float>(this->_input));
 }
 
 double					Convert::getDouble(void) const
 {
-	return (static_cast<double>(this->_input));
+	return (this->_input);
 }
 
 const char				*Convert::ImpossibleException::what() const throw()
