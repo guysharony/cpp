@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:00:45 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/10 12:33:44 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/10 14:12:00 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,14 @@ int		main(int argc, char **argv)
 		Convert			c(str);
 
 		std::cout << "char: " << c.getChar() << std::endl;
-		std::cout << "int: " << c.getInt() << std::endl;
-		std::cout << "float: " << c.getFloat() << std::endl;
-		std::cout << "double: " << c.getDouble() << std::endl;
+		std::cout << "int: ";
+		try {
+			std::cout << c.getInt() << std::endl;
+		} catch(const std::exception& e) {
+			std::cout << e.what() << std::endl;
+		}
+		std::cout << "float: " << std::setprecision(1) << std::fixed << c.getFloat() << "f" << std::endl;
+		std::cout << "double: " << std::setprecision(1) << std::fixed << c.getDouble() << std::endl;
 	}
 	return (0);
 }

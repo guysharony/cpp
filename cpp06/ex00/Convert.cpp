@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:01:36 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/10 12:32:52 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/10 14:10:40 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,8 @@ Convert::~Convert()
 
 Convert					&Convert::operator=(Convert const & src)
 {
-	this->_input = src.getInput();
+	this->_input = src.getFloat();
 	return (*this);
-}
-
-float					Convert::getInput(void) const
-{
-	return (this->_input);
 }
 
 void					Convert::setInput(std::string const & input)
@@ -72,30 +67,26 @@ std::string				Convert::getChar(void)
 	return (tmp.str());
 }
 
-std::string				Convert::getInt(void)
+int						Convert::getInt(void)
 {
-	std::ostringstream	tmp;
 	int 				c = static_cast<int>(this->_input);
 	
 	if (this->_input != this->_input)
-		tmp << "impossible";
-	else
-		tmp << c;
-	return (tmp.str());
+		throw Convert::ImpossibleException();
+	return (c);
 }
 
-std::string				Convert::getFloat(void)
+float					Convert::getFloat(void) const
 {
-	std::ostringstream	tmp;
-
-	tmp << std::setprecision(1) << std::fixed << this->_input << "f";
-	return (tmp.str());
+	return (this->_input);
 }
 
-std::string				Convert::getDouble(void)
+double					Convert::getDouble(void) const
 {
-	std::ostringstream	tmp;
+	return (static_cast<double>(this->_input));
+}
 
-	tmp << std::setprecision(1) << std::fixed << static_cast<double>(this->_input);
-	return (tmp.str());
+const char				*Convert::ImpossibleException::what() const throw()
+{
+	return ("impossible");
 }
