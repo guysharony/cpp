@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:01:36 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/10 09:57:27 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/10 10:00:12 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void					Convert::_init(std::string const & input)
 	char 				c = static_cast<char>(tmp);
 	
 	std::cout << "char: ";
-	if (isnan(c))
+	if (tmp != tmp)
 		std::cout << "impossible" << std::endl;
 	else if (c < 32 || c > 126)
 		std::cout << "Non displayable" << std::endl;
