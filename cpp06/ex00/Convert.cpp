@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:01:36 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/10 10:06:16 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/10 10:07:07 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,5 @@ void					Convert::_init(std::string const & input)
 	else if (c < 32 || c > 126)
 		std::cout << "Non displayable" << std::endl;
 	else
-		std::cout << c << std::endl;
+		std::cout << '\'' << c << '\'' << std::endl;
 }
