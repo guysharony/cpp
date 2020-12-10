@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:01:36 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/09 15:21:28 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/10 09:41:09 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ Convert::Convert(std::string const & input)
 :
 	_input(input)
 {
+	this->_init(input);
 	return;
 }
 
@@ -51,4 +52,10 @@ std::string				Convert::getInput(void) const
 void					Convert::setInput(std::string const & input)
 {
 	this->_input = input;
+}
+
+void					Convert::_init(std::string const & input)
+{
+	if (input.length() == 3)
+		std::cout << input << std::endl;
 }
