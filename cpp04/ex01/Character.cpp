@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/02 07:21:34 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/08 15:03:45 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/10 08:17:44 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,18 +59,15 @@ void 			Character::attack(Enemy *enemy)
 {
 	if (this->_aweapon && enemy)
 	{
-		if (enemy->getHP() <= 0)
-			std::cout << "[Enemy is already dead]" << std::endl;
-		else if (this->_apcost < this->_aweapon->getAPCost())
+		if (this->_apcost < this->_aweapon->getAPCost())
 			std::cout << "[At least " << _aweapon->getAPCost() << " action points is required to attack]" << std::endl;
 		else {
 			this->_apcost -= this->_aweapon->getAPCost();
 			std::cout << this->_name << " attaque " << enemy->getType() << " with a " << this->_aweapon->getName() << std::endl;
 			this->_aweapon->attack();
 			enemy->takeDamage(this->_aweapon->getDamage());
-			if (enemy->getHP() <= 0) {
+			if (enemy->getHP() <= 0)
 				delete enemy;
-			}
 		}
 	}
 	return;
