@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:01:36 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/10 10:25:47 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/10 12:09:14 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@ Convert::Convert(void)
 }
 
 Convert::Convert(std::string const & input)
-:
-	_input(std::stof(input))
 {
+	if (input.length() == 1 && !isdigit(input[0]))
+		this->_input = static_cast<float>(input[0]);
+	else
+		this->_input = std::stof(input);
 	return;
 }
 
@@ -50,7 +52,10 @@ float					Convert::getInput(void) const
 
 void					Convert::setInput(std::string const & input)
 {
-	this->_input = std::stof(input);
+	if (input.length() == 1 && !isdigit(input[0]))
+		this->_input = static_cast<float>(input[0]);
+	else
+		this->_input = std::stof(input);
 }
 
 std::string				Convert::getChar(void)
