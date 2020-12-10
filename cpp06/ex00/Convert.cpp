@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:01:36 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/10 10:02:35 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/10 10:06:16 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ void					Convert::_init(std::string const & input)
 {
 	float				tmp;
 
-	if (input.length() == 1)
-		tmp = static_cast<float>(input[0]);
+	if (input.length() == 3 && input[0] == '\'' && input[2] == '\'')
+		tmp = static_cast<float>(input[1]);
 	else
 		tmp = std::stof(input);
 
