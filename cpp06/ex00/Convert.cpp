@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:01:36 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/10 09:41:09 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/10 09:57:27 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,20 @@ void					Convert::setInput(std::string const & input)
 
 void					Convert::_init(std::string const & input)
 {
-	if (input.length() == 3)
-		std::cout << input << std::endl;
+	float				tmp;
+
+	if (input.length() == 1)
+		tmp = static_cast<float>(input[1]);
+	else
+		tmp = std::stof(input);
+
+	char 				c = static_cast<char>(tmp);
+	
+	std::cout << "char: ";
+	if (isnan(c))
+		std::cout << "impossible" << std::endl;
+	else if (c < 32 || c > 126)
+		std::cout << "Non displayable" << std::endl;
+	else
+		std::cout << c << std::endl;
 }
