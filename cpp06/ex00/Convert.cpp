@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:01:36 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/10 14:10:40 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/10 14:21:49 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,18 +53,15 @@ void					Convert::setInput(std::string const & input)
 		this->_input = std::stof(input);
 }
 
-std::string				Convert::getChar(void)
+char					Convert::getChar(void)
 {
-	std::ostringstream	tmp;
 	char 				c = static_cast<char>(this->_input);
 	
 	if (this->_input != this->_input)
-		tmp << "impossible";
-	else if (c < 32 || c > 126)
-		tmp << "Non displayable";
-	else
-		tmp << "'" << c << "'";
-	return (tmp.str());
+		throw Convert::ImpossibleException();
+	if (c < 32 || c > 126)
+		throw Convert::NonDisplayableException();
+	return (c);
 }
 
 int						Convert::getInt(void)
@@ -89,4 +86,9 @@ double					Convert::getDouble(void) const
 const char				*Convert::ImpossibleException::what() const throw()
 {
 	return ("impossible");
+}
+
+const char				*Convert::NonDisplayableException::what() const throw()
+{
+	return ("Non displayable");
 }

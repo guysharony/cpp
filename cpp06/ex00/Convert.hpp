@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:02:07 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/10 14:09:37 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/10 14:21:48 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,18 @@ class Convert
 
 		void				setInput(std::string const & input);
 		
-		std::string			getChar(void);
+		char				getChar(void);
 		int					getInt(void);
 		float				getFloat(void) const;
 		double				getDouble(void) const;
 
 		class ImpossibleException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
+		class NonDisplayableException : public std::exception
 		{
 			public:
 				virtual const char* what() const throw();
