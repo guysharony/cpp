@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:01:36 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/10 12:26:12 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/10 12:32:52 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,14 @@ std::string				Convert::getFloat(void)
 {
 	std::ostringstream	tmp;
 
-	tmp << std::setprecision(1) << std::fixed << static_cast<float>(this->_input) << "f";
+	tmp << std::setprecision(1) << std::fixed << this->_input << "f";
+	return (tmp.str());
+}
+
+std::string				Convert::getDouble(void)
+{
+	std::ostringstream	tmp;
+
+	tmp << std::setprecision(1) << std::fixed << static_cast<double>(this->_input);
 	return (tmp.str());
 }
