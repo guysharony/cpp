@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:01:36 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/10 12:13:35 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/10 12:15:14 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,6 @@ std::string				Convert::getInt(void)
 	if (this->_input != this->_input)
 		tmp << "impossible";
 	else
-		tmp << "'" << c << "'";
+		tmp << c;
 	return (tmp.str());
 }
