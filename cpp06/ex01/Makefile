@@ -4,7 +4,7 @@ FILES		= main.cpp serializer.cpp
 
 OBJS		= $(FILES:.cpp=.o)
 
-EXE			= series
+EXE			= serializer
 
 all:		$(EXE)
 
