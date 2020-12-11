@@ -2,20 +2,20 @@
 
 FILES		= main.cpp Convert.cpp
 
-OBJS		= ${FILES:.cpp=.o}
+OBJS		= $(FILES:.cpp=.o)
 
 EXE			= convert
 
-all:		${EXE}
+all:		$(EXE)
 
-${EXE}:		${OBJS}
-			clang++ ${FLAGS} -o ${EXE} ${OBJS}
+$(EXE):		$(OBJS)
+			clang++ $(FLAGS) -o $(EXE) $(OBJS)
 
 clean:
-			${RM} ${OBJS}
+			rm $(OBJS)
 
 fclean:		clean
-			${RM} ${EXE}
+			rm $(EXE)
 
 re:			fclean all
 
