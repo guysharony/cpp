@@ -6,21 +6,24 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/05 10:58:22 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/08 10:33:14 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/12 17:37:08 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 int		main(void)
 {
 	Bureaucrat 					a("Human", 150);
+	Intern						intern;
+
+	std::cout << "<=== Testing form 1/4 ===>" << std::endl;
+	Form 						*b = intern.makeForm("shrubbery random", "SCF-27D");
 	
-	std::cout << "<=== Testing form 1/3 ===>" << std::endl;
-	Form 						*b = new ShrubberyCreationForm("SCF-27A");
+	std::cout << std::endl;
+	std::cout << "<=== Testing form 2/4 ===>" << std::endl;
+	b = intern.makeForm("shrubbery creation", "SCF-27A");
 	
 	try {
 		a.signForm(*b);
@@ -73,8 +76,8 @@ int		main(void)
 
 	std::cout << std::endl;
 	std::cout << std::endl;
-	std::cout << "<=== Testing form 2/3 ===>" << std::endl;
-	Form 						*c = new RobotomyRequestForm("RMF-27B");
+	std::cout << "<=== Testing form 3/4 ===>" << std::endl;
+	Form 						*c = intern.makeForm("robotomy request", "RMF-27B");
 	
 	try {
 		a.signForm(*c);
@@ -127,8 +130,8 @@ int		main(void)
 
 	std::cout << std::endl;
 	std::cout << std::endl;
-	std::cout << "<=== Testing form 3/3 ===>" << std::endl;
-	Form 						*d = new PresidentialPardonForm("PPF-27C");
+	std::cout << "<=== Testing form 4/4 ===>" << std::endl;
+	Form 						*d = intern.makeForm("presidential pardon", "PPF-27C");
 	
 	try {
 		a.signForm(*d);
@@ -178,8 +181,5 @@ int		main(void)
 	} catch (const std::exception& e) {
 		std::cout << a.getName() << " cant execute form because " << e.what() << std::endl;
 	}
-	delete b;
-	delete c;
-	delete d;
 	return (0);
 }
