@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/08 11:16:27 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/08 13:54:28 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/12 17:28:59 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,17 @@ class Intern
 
 		Intern 		&operator=(Intern const & src);
 
+		static Form		*newShrubberyCreationForm(std::string const & target);
+		static Form		*newRobotomyRequestForm(std::string const & target);
+		static Form		*newPresidentialPardonForm(std::string const & target);
+
+		Form		*makeForm(std::string const & form, std::string const & target);
+
 	private:
-		typedef struct 		s_formlst
-		{
+		typedef struct {
 			std::string		_name;
-			Form			*(*fct)(std::string);
-		}					t_formlst;
+			Form			*(*makeForm)(const std::string &);
+		}					formlst;
 };
 
 #endif

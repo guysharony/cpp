@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 14:01:20 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/08 10:30:02 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/12 17:01:17 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,44 +47,46 @@ ShrubberyCreationForm		&ShrubberyCreationForm::operator=(ShrubberyCreationForm c
 void						ShrubberyCreationForm::executeForm(Bureaucrat const & executor) const
 {
 	std::ofstream			file;
+	std::ostringstream		tree;
 
 	this->getFormExpt(executor);
 	file.open(this->getName() + "_shrubbery");
 	if (file.is_open())
 	{
-		file << "         ___            " << std::endl;
-		file << "    /---     ---\\      " << std::endl;
-		file << " /--             --\\   " << std::endl;
-		file << "|                   |   " << std::endl;
-		file << "|                   |   " << std::endl;
-		file << "|                   |   " << std::endl;
-		file << " \\   --       --   /    " << std::endl;
-		file << "   -    \\\\  //   -      " << std::endl;
-		file << "      \\\\//  \\\\//      " << std::endl;
-		file << "       \\\\    //       " << std::endl;
-		file << "        ==  ==          " << std::endl;
-		file << "         }}{{           " << std::endl;
-		file << "         }}{{           " << std::endl;
-		file << "         }}{{           " << std::endl;
-		file << "     /----------\\      " << std::endl;
-		file << "____/            \\____ " << std::endl;
-		file << "                        " << std::endl;
-		file << "         ___            " << std::endl;
-		file << "    /---     ---\\      " << std::endl;
-		file << " /--             --\\   " << std::endl;
-		file << "|                   |   " << std::endl;
-		file << "|                   |   " << std::endl;
-		file << "|                   |   " << std::endl;
-		file << " \\   --       --   /    " << std::endl;
-		file << "   -    \\\\  //   -      " << std::endl;
-		file << "      \\\\//  \\\\//      " << std::endl;
-		file << "       \\\\    //       " << std::endl;
-		file << "        ==  ==          " << std::endl;
-		file << "         }}{{           " << std::endl;
-		file << "         }}{{           " << std::endl;
-		file << "         }}{{           " << std::endl;
-		file << "     /----------\\      " << std::endl;
-		file << "____/            \\____ " << std::endl;
+		tree << "         ___            " << std::endl;
+		tree << "    /---     ---\\      " << std::endl;
+		tree << " /--             --\\   " << std::endl;
+		tree << "|                   |   " << std::endl;
+		tree << "|                   |   " << std::endl;
+		tree << "|                   |   " << std::endl;
+		tree << " \\   --       --   /    " << std::endl;
+		tree << "   -    \\\\  //   -      " << std::endl;
+		tree << "      \\\\//  \\\\//      " << std::endl;
+		tree << "       \\\\    //       " << std::endl;
+		tree << "        ==  ==          " << std::endl;
+		tree << "         }}{{           " << std::endl;
+		tree << "         }}{{           " << std::endl;
+		tree << "         }}{{           " << std::endl;
+		tree << "     /----------\\      " << std::endl;
+		tree << "____/            \\____ " << std::endl;
+		tree << "                        " << std::endl;
+		tree << "         ___            " << std::endl;
+		tree << "    /---     ---\\      " << std::endl;
+		tree << " /--             --\\   " << std::endl;
+		tree << "|                   |   " << std::endl;
+		tree << "|                   |   " << std::endl;
+		tree << "|                   |   " << std::endl;
+		tree << " \\   --       --   /    " << std::endl;
+		tree << "   -    \\\\  //   -      " << std::endl;
+		tree << "      \\\\//  \\\\//      " << std::endl;
+		tree << "       \\\\    //       " << std::endl;
+		tree << "        ==  ==          " << std::endl;
+		tree << "         }}{{           " << std::endl;
+		tree << "         }}{{           " << std::endl;
+		tree << "         }}{{           " << std::endl;
+		tree << "     /----------\\      " << std::endl;
+		tree << "____/            \\____ " << std::endl;
+		file << tree.str();
 	}
 	file.close();
 	return;
