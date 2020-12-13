@@ -181,5 +181,8 @@ int		main(void)
 	} catch (const std::exception& e) {
 		std::cout << a.getName() << " cant execute form because " << e.what() << std::endl;
 	}
+	delete b;
+	delete c;
+	delete d;
 	return (0);
 }

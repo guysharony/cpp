@@ -48,9 +48,10 @@ void						ShrubberyCreationForm::executeForm(Bureaucrat const & executor) const
 {
 	std::ofstream			file;
 	std::ostringstream		tree;
+	std::string			name(this->getName() + "_shrubbery");
 
 	this->getFormExpt(executor);
-	file.open(this->getName() + "_shrubbery");
+	file.open(name.c_str());
 	if (file.is_open())
 	{
 		tree << "         ___            " << std::endl;
