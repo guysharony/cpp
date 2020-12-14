@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:01:36 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/10 21:38:00 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/14 14:31:30 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ Convert::~Convert()
 
 Convert					&Convert::operator=(Convert const & src)
 {
-	this->_input = src.getFloat();
+	this->_input = src.getDouble();
 	return (*this);
 }
 
@@ -65,7 +65,7 @@ char					Convert::getChar(void)
 {
 	char 				c = static_cast<char>(this->_input);
 	
-	if (this->_input != this->_input)
+	if ((this->_input != this->_input) || (this->_input == std::numeric_limits<double>::infinity()) || (this->_input == -std::numeric_limits<double>::infinity()))
 		throw Convert::ImpossibleException();
 	if (c < 32 || c > 126)
 		throw Convert::NonDisplayableException();
@@ -76,7 +76,7 @@ int						Convert::getInt(void)
 {
 	int 				c = static_cast<int>(this->_input);
 	
-	if (this->_input != this->_input)
+	if ((this->_input != this->_input) || (this->_input == std::numeric_limits<double>::infinity()) || (this->_input == -std::numeric_limits<double>::infinity()))
 		throw Convert::ImpossibleException();
 	return (c);
 }
