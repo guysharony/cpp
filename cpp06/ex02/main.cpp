@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 09:12:56 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/11 09:26:42 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/14 16:37:28 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int		main(void)
 	std::cout << "Identify from reference - ";
 	identify_from_reference(*base);
 	std::cout << std::endl;
+	delete base;
 	return (0);
 }
