@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:01:36 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/14 15:16:02 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/14 15:52:43 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,15 @@ Convert::Convert(char *input)
 	std::string	tmp;
 
 	tmp = input;
+	this->_error = false;
 	if (tmp.length() == 1 && !isdigit(input[0]))
-	{
 		this->_input = static_cast<float>(input[0]);
-		this->_error = false;
-	} else {
+	else {
 		try {
-			this->_input = std::stof(input);
-			this->_error = false;
+			this->_input = std::stof(tmp);
+			int	n = tmp.find(".");
+			if (n != std::string::npos && tmp.find(".", n + 1) != std::string::npos)
+				this->_error = true;
 		} catch (const std::exception& e) {
 			this->_input = 0;
 			this->_error = true;
@@ -62,14 +63,15 @@ void					Convert::setInput(char *input)
 	std::string	tmp;
 
 	tmp = input;
+	this->_error = false;
 	if (tmp.length() == 1 && !isdigit(input[0]))
-	{
 		this->_input = static_cast<float>(input[0]);
-		this->_error = false;
-	} else {
+	else {
 		try {
-			this->_input = std::stof(input);
-			this->_error = false;
+			this->_input = std::stof(tmp);
+			int	n = tmp.find(".");
+			if (n != std::string::npos && tmp.find(".", n + 1) != std::string::npos)
+				this->_error = true;
 		} catch (const std::exception& e) {
 			this->_input = 0;
 			this->_error = true;
