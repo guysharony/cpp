@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:00:45 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/14 14:57:58 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/14 15:17:14 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,18 @@ int		main(int argc, char **argv)
 		} catch(const std::exception& e) {
 			std::cout << e.what() << std::endl;
 		}
-		std::cout << "float: " << std::setprecision(1) << std::fixed << c.getFloat() << "f" << std::endl;
-		std::cout << "double: " << std::setprecision(1) << std::fixed << c.getDouble() << std::endl;
+		std::cout << "float: ";
+		try {
+			std::cout << std::setprecision(1) << std::fixed << c.getFloat() << "f" << std::endl;
+		} catch(const std::exception& e) {
+			std::cout << e.what() << std::endl;
+		}
+		std::cout << "double: ";
+		try {
+			std::cout << std::setprecision(1) << std::fixed << c.getDouble() << std::endl;
+		} catch(const std::exception& e) {
+			std::cout << e.what() << std::endl;
+		}
 	}
 	return (0);
 }

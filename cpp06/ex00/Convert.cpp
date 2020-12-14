@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:01:36 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/14 14:53:55 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/14 15:16:02 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,17 @@ Convert::Convert(char *input)
 
 	tmp = input;
 	if (tmp.length() == 1 && !isdigit(input[0]))
+	{
 		this->_input = static_cast<float>(input[0]);
-	else {
-		this->_input = std::stof(input);
+		this->_error = false;
+	} else {
+		try {
+			this->_input = std::stof(input);
+			this->_error = false;
+		} catch (const std::exception& e) {
+			this->_input = 0;
+			this->_error = true;
+		}
 	}
 	return;
 }
@@ -55,17 +63,26 @@ void					Convert::setInput(char *input)
 
 	tmp = input;
 	if (tmp.length() == 1 && !isdigit(input[0]))
-		this->_input = static_cast<double>(input[0]);
-	else {
-		this->_input = atof(input);
+	{
+		this->_input = static_cast<float>(input[0]);
+		this->_error = false;
+	} else {
+		try {
+			this->_input = std::stof(input);
+			this->_error = false;
+		} catch (const std::exception& e) {
+			this->_input = 0;
+			this->_error = true;
+		}
 	}
+	return;
 }
 
 char					Convert::getChar(void)
 {
 	char 				c = static_cast<char>(this->_input);
-	
-	if ((this->_input != this->_input) || (this->_input < -2147483648) || (this->_input > 2147483647))
+
+	if (this->_error || (this->_input != this->_input) || (this->_input < -2147483648) || (this->_input > 2147483647))
 		throw Convert::ImpossibleException();
 	if (c < 32 || c > 126)
 		throw Convert::NonDisplayableException();
@@ -76,18 +93,22 @@ int						Convert::getInt(void)
 {
 	int 				c = static_cast<int>(this->_input);
 	
-	if ((this->_input != this->_input) || (this->_input < -2147483648) || (this->_input > 2147483647))
+	if (this->_error || (this->_input != this->_input) || (this->_input < -2147483648) || (this->_input > 2147483647))
 		throw Convert::ImpossibleException();
 	return (c);
 }
 
 float					Convert::getFloat(void) const
 {
+	if (this->_error)
+		throw Convert::ImpossibleException();
 	return (this->_input);
 }
 
 double					Convert::getDouble(void) const
 {
+	if (this->_error)
+		throw Convert::ImpossibleException();
 	return (static_cast<double>(this->_input));
 }
 
