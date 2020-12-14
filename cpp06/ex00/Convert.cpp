@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:01:36 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/14 16:23:16 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/14 17:18:52 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Convert::Convert(char *input)
 		this->_input = static_cast<float>(input[0]);
 	else {
 		try {
-			this->_input = std::stof(tmp);
+			this->_input = std::atof(input);
 			int	n = tmp.find(".");
 			if (n != std::string::npos && tmp.find(".", n + 1) != std::string::npos)
 				this->_error = true;
@@ -68,7 +68,7 @@ void					Convert::setInput(char *input)
 		this->_input = static_cast<float>(input[0]);
 	else {
 		try {
-			this->_input = std::stof(tmp);
+			this->_input = std::atof(input);
 			int	n = tmp.find(".");
 			if (n != std::string::npos && tmp.find(".", n + 1) != std::string::npos)
 				this->_error = true;
@@ -104,14 +104,14 @@ float					Convert::getFloat(void) const
 {
 	if (this->_error)
 		throw Convert::ImpossibleException();
-	return (this->_input);
+	return (static_cast<float>(this->_input));
 }
 
 double					Convert::getDouble(void) const
 {
 	if (this->_error)
 		throw Convert::ImpossibleException();
-	return (static_cast<double>(this->_input));
+	return (this->_input);
 }
 
 const char				*Convert::ImpossibleException::what() const throw()

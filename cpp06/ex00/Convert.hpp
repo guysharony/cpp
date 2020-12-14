@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:02:07 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/14 15:43:24 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/14 17:14:09 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include <limits>
 # include <iomanip>
 # include <fstream>
 # include <sstream>
@@ -49,7 +50,7 @@ class Convert
 		
 	private:
 		Convert(void);
-		float 				_input;
+		double 				_input;
 		bool				_error;
 };
 
