@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 07:42:38 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/14 16:29:45 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/14 16:35:05 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ int		main(void)
 	std::cout << "n   [" << tmp2->n << "]" << std::endl;
 	std::cout << "s2  [" << tmp2->s2 << "]" << std::endl;
 	delete [] reinterpret_cast<char *>(tmp1);
+	delete tmp2;
 	return (0);
 }

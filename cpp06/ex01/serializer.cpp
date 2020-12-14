@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 07:54:05 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/14 16:28:19 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/14 16:34:53 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ Data 	*deserialize(void * raw)
 {
 	Data	*data = new Data();
 	char	*tmpChar = reinterpret_cast<char *>(raw);
-	int		*tmpInt = reinterpret_cast<int *>(raw);
+	int		*tmpInt = reinterpret_cast<int *>(tmpChar + 8);
 	
 	data->s1 = std::string(tmpChar, 8);
-	data->n = *(tmpInt + 8);
+	data->n = *(tmpInt);
 	data->s2 = std::string(tmpChar + 12, 8);
 	return (data);
 }
