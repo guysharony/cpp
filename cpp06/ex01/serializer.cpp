@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 07:54:05 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/11 08:52:40 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/14 16:28:19 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void 	*serialize(void)
 
 	char	aln[63] = "aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ0123456789";
 
+	srand(time(NULL));
 	for(int i = 0; i < 8; i++)
 		tmp[i] = aln[rand() % 62];
 	*reinterpret_cast<int *>(tmp + 8) = rand() % 2147483647;
