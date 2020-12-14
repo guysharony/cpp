@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/09 11:01:36 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/14 14:38:12 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/14 14:53:55 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ Convert::Convert(char *input)
 
 	tmp = input;
 	if (tmp.length() == 1 && !isdigit(input[0]))
-		this->_input = static_cast<double>(input[0]);
+		this->_input = static_cast<float>(input[0]);
 	else {
-		this->_input = atof(input);
+		this->_input = std::stof(input);
 	}
 	return;
 }
@@ -83,12 +83,12 @@ int						Convert::getInt(void)
 
 float					Convert::getFloat(void) const
 {
-	return (static_cast<float>(this->_input));
+	return (this->_input);
 }
 
 double					Convert::getDouble(void) const
 {
-	return (this->_input);
+	return (static_cast<double>(this->_input));
 }
 
 const char				*Convert::ImpossibleException::what() const throw()
