@@ -4,7 +4,7 @@ FILES		= main.cpp
 
 OBJS		= $(FILES:.cpp=.o)
 
-EXE			= test
+EXE			= whatever
 
 all:		$(EXE)
 
