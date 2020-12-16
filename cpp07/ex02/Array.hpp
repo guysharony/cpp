@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 13:22:06 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/16 16:13:22 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/16 16:21:29 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,7 @@ class Array
 		
 		Array(Array const & src)
 		{
-			this->_array = new T[src.size()];
-			for (int i = 0; i < src.size(); i++)
-				this->_array[i] = src._array[i];
-			this->_size = src.size();
+			*this = src;
 			return;
 		}
 		
