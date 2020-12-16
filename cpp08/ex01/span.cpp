@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 14:10:59 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/12 15:03:37 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/16 13:28:17 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,9 @@ int				Span::shortestSpan(void)
 {
 	if (this->_array.size() <= 1)
 		throw Span::ArrayIsTooShort();
-	int		r;
 	int		t;
-	for (int i = 0; i < this->_array.size(); i++)
+	int		r;
+	for (size_t i = 0; i < this->_array.size(); i++)
 	{
 		t = this->_array[i + 1] - this->_array[i];
 		t = (t < 0) ? -t : t;
