@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 14:10:57 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/16 13:55:00 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/16 16:02:11 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,14 @@ int		main(void)
 	}
 
 	try {
-		int a = span1.shortestSpan();
+		long a = span1.shortestSpan();
 		std::cout << "[Shortest Span1 is " << a << " (5 and 3)]" << std::endl;
 	} catch(const std::exception& e) {
 		std::cerr << e.what() << '\n';
 	}
 
 	try {
-		int b = span1.longestSpan();
+		long b = span1.longestSpan();
 		std::cout << "[Longest Span1 is " << b << " (17 and 3)]" << std::endl;
 	} catch(const std::exception& e) {
 		std::cerr << e.what() << '\n';
@@ -109,14 +109,14 @@ int		main(void)
 	}
 
 	try {
-		int a = span2.shortestSpan();
+		long a = span2.shortestSpan();
 		std::cout << "[Shortest Span2 is " << a << " (-5 and 0)]" << std::endl;
 	} catch(const std::exception& e) {
 		std::cerr << e.what() << '\n';
 	}
 	
 	try {
-		int b = span2.longestSpan();
+		long b = span2.longestSpan();
 		std::cout << "[Longest Span2 is " << b << " (-10 and 6)]" << std::endl;
 	} catch(const std::exception& e) {
 		std::cerr << e.what() << '\n';
@@ -135,15 +135,48 @@ int		main(void)
 	}
 
 	try {
-		int a = span3.shortestSpan();
+		long a = span3.shortestSpan();
 		std::cout << "[Shortest Span3 is " << a << "]" << std::endl;
 	} catch(const std::exception& e) {
 		std::cerr << e.what() << '\n';
 	}
 	
 	try {
-		int b = span3.longestSpan();
+		long b = span3.longestSpan();
 		std::cout << "[Longest Span3 is " << b << "]" << std::endl;
+	} catch(const std::exception& e) {
+		std::cerr << e.what() << '\n';
+	}
+
+	std::cout << std::endl;
+	std::cout << "<=== Test 4 ===>" << std::endl;
+	std::cout << "[Creating Span2 of size 2]" << std::endl;
+	Span span4 = Span(2);
+	
+	try {
+		span4.addNumber(2147483647);
+		std::cout << "Adding [2147483647 ] to Span4" << std::endl;
+	} catch(const std::exception& e) {
+		std::cerr << e.what() << '\n';
+	}
+
+	try {
+		span4.addNumber(-2147483648);
+		std::cout << "Adding [-2147483648] to Span4" << std::endl;
+	} catch(const std::exception& e) {
+		std::cerr << e.what() << '\n';
+	}
+
+	try {
+		long a = span4.shortestSpan();
+		std::cout << "[Shortest Span4 is " << a << "]" << std::endl;
+	} catch(const std::exception& e) {
+		std::cerr << e.what() << '\n';
+	}
+	
+	try {
+		long b = span4.longestSpan();
+		std::cout << "[Longest Span4 is " << b << "]" << std::endl;
 	} catch(const std::exception& e) {
 		std::cerr << e.what() << '\n';
 	}

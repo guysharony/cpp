@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 13:22:06 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/12 14:26:17 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/16 15:53:53 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ class Array
 			return (this->_array[n]);
 		}
 
-		int		size(void) const
+		unsigned int	size(void) const
 		{
 			return (this->_size);
 		}
@@ -82,8 +82,8 @@ class Array
 		};
 		
 	private:
-		T		*_array;
-		int		_size;
+		T				*_array;
+		unsigned int	_size;
 };
 
 #endif

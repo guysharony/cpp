@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/11 10:37:32 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/11 11:11:36 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/16 15:52:20 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	decrByFive(T &a)
 template <typename T>
 void	change(T &a)
 {
-	for (int i = 0; i < a.length(); i++)
+	for (size_t i = 0; i < a.length(); i++)
 	{
 		if (a[i] >= 'a' && a[i] <= 'z')
 			a[i] -= 32;

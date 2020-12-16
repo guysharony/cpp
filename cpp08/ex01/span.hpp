@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 14:11:02 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/16 15:30:43 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/16 15:59:04 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ class Span
 		Span const &operator=(Span const & src);
 
 		void	addNumber(int n);
-		int		shortestSpan(void);
-		int		longestSpan(void);
+		long	shortestSpan(void);
+		long	longestSpan(void);
 
 		class ArrayIsFull : public std::exception
 		{
