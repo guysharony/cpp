@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 14:10:57 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/18 09:05:25 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/18 09:14:31 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -193,7 +193,11 @@ int		main(void)
 		vector[i] = i;
 
 	std::cout << "[Adding numbers from vector to span5]" << std::endl;
-	span5.addNumber(vector.begin(), vector.end());
+	try {
+		span5.addNumber(vector.begin(), vector.end());
+	} catch(const std::exception& e) {
+		std::cerr << e.what() << '\n';
+	}
 
 	try {
 		long a = span5.shortestSpan();
