@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 14:11:02 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/18 09:07:04 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/18 09:08:46 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ class Span
 		template <typename I>
 		void	addNumber(I begin, I end)
 		{
-			std::cout << this->_array.size() + std::distance(begin, end) << std::endl;
 			if (this->_array.size() + std::distance(begin, end) > this->_n)
 				throw Span::ArrayIsFull();
 			std::copy(begin, end, std::back_inserter(this->_array));
