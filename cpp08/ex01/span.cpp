@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 14:10:59 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/16 16:20:52 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/18 09:07:06 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,11 @@ long			Span::longestSpan(void)
 const char		*Span::ArrayIsFull::what() const throw()
 {
 	return ("Error: The list is full.");
+}
+
+const char		*Span::RangeTooLarge::what() const throw()
+{
+	return ("Error: The range of iterators is too large.");
 }
 
 const char		*Span::ArrayIsTooShort::what() const throw()

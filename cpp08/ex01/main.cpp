@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 14:10:57 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/18 08:17:30 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/18 09:05:25 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,16 +183,17 @@ int		main(void)
 
 	std::cout << std::endl;
 	std::cout << "<=== Test 5 ===>" << std::endl;
-	std::cout << "[Creating Span5 of size 2]" << std::endl;
+	std::cout << "[Creating Span5 of size 25000]" << std::endl;
 	Span span5 = Span(25000);
-	
-	try {
-		for (int i = 0; i < 50; i++)
-			for (int j = 0; j < 500; j++)
-				span5.addNumber(i * j);
-	} catch(const std::exception& e) {
-		std::cerr << e.what() << '\n';
-	}
+	std::cout << "[Creating vector of size 25000]" << std::endl;
+	std::vector<int>	vector(25000);
+
+	std::cout << "[Adding numbers from 0 to 25000]" << std::endl;
+	for (int i = 0; i < 25000; i++)
+		vector[i] = i;
+
+	std::cout << "[Adding numbers from vector to span5]" << std::endl;
+	span5.addNumber(vector.begin(), vector.end());
 
 	try {
 		long a = span5.shortestSpan();
