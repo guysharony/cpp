@@ -6,7 +6,7 @@
 /*   By: gsharony <gsharony@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/12 14:10:57 by gsharony          #+#    #+#             */
-/*   Updated: 2020/12/16 16:02:11 by gsharony         ###   ########.fr       */
+/*   Updated: 2020/12/18 08:17:30 by gsharony         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,7 +150,7 @@ int		main(void)
 
 	std::cout << std::endl;
 	std::cout << "<=== Test 4 ===>" << std::endl;
-	std::cout << "[Creating Span2 of size 2]" << std::endl;
+	std::cout << "[Creating Span4 of size 2]" << std::endl;
 	Span span4 = Span(2);
 	
 	try {
@@ -177,6 +177,33 @@ int		main(void)
 	try {
 		long b = span4.longestSpan();
 		std::cout << "[Longest Span4 is " << b << "]" << std::endl;
+	} catch(const std::exception& e) {
+		std::cerr << e.what() << '\n';
+	}
+
+	std::cout << std::endl;
+	std::cout << "<=== Test 5 ===>" << std::endl;
+	std::cout << "[Creating Span5 of size 2]" << std::endl;
+	Span span5 = Span(25000);
+	
+	try {
+		for (int i = 0; i < 50; i++)
+			for (int j = 0; j < 500; j++)
+				span5.addNumber(i * j);
+	} catch(const std::exception& e) {
+		std::cerr << e.what() << '\n';
+	}
+
+	try {
+		long a = span5.shortestSpan();
+		std::cout << "[Shortest Span5 is " << a << "]" << std::endl;
+	} catch(const std::exception& e) {
+		std::cerr << e.what() << '\n';
+	}
+	
+	try {
+		long b = span5.longestSpan();
+		std::cout << "[Longest Span5 is " << b << "]" << std::endl;
 	} catch(const std::exception& e) {
 		std::cerr << e.what() << '\n';
 	}
